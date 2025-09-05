@@ -25,19 +25,28 @@
     <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
   </a>
   </p>
-
+  
 <p align="center">
-  <a href="#key-features">Recursos</a> •
-  <a href="#how-to-use">Como usar?</a> •
+  <a href="#cargos">Cargos</a> •
+  <a href="#recursos">Recursos</a> •
+  <a href="#como-usar?">Como usar?</a> •
   <a href="#download">Download</a> •
-  <a href="#credits">Creditos</a> •
-  <a href="#related">Relacionado</a> •
-  <a href="#license">Licença</a>
+  <a href="#creditos">Creditos</a> •
+  <a href="#relacionado">Relacionado</a> •
+  <a href="#licença">Licença</a>
 </p>
 
 <!--
 ![screenshot](#)
 -->
+
+
+## Cargos:
+- Devs Back-end: `Breno / Ivo / Diogo` - Java / Spring  
+- Devs Front-end: `Pedro / Salomão` - Javascript / HTML / Tailwind  
+- Devs Fullstack: `Nedson / Alvin` - Java / Spring / Javascript / HTML / Tailwind  
+- Design: `Pedro / Salomão`
+
 
 ## Recursos - Sprints
 
