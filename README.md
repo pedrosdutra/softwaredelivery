@@ -29,6 +29,7 @@
 <p align="center">
   <a href="#cargos">Cargos</a> •
   <a href="#recursos">Recursos</a> •
+   <a href="#quadro-scrum">Quadro Scrum</a> •
   <a href="#como-usar?">Como usar?</a> •
   <a href="#download">Download</a> •
   <a href="#creditos">Creditos</a> •
@@ -71,6 +72,17 @@
 10. Notificação Promocional 
 
 11. Recurso para recomendar um restaurante/comida aleatória com melhor avaliação
+
+## Quadro Scrum
+
+### Usamos o Jira para fazer:
+
+<img src="assets/board.png">
+<img src="assets/backlog_1.png">
+<img src="assets/backlog_2.png">
+<img src="assets/backlog_3.png">
+<img src="assets/backlog_4.png">
+<img src="assets/backlog_5.png">
 
 <!--
 ## Como usar?
