@@ -77,12 +77,12 @@
 
 ### Usamos o Jira para fazer:
 
-<img src="assets/board.png">
+<!--<img src="assets/board.png">
 <img src="assets/backlog_1.png">
 <img src="assets/backlog_2.png">
 <img src="assets/backlog_3.png">
 <img src="assets/backlog_4.png">
-<img src="assets/backlog_5.png">
+<img src="assets/backlog_5.png">-->
 
 <!--
 ## Como usar?
