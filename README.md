@@ -71,7 +71,9 @@
 
 10. Notificação Promocional 
 
-11. Recurso para recomendar um restaurante/comida aleatória com melhor avaliação
+11. Recurso para fazer seu "Par de Comida"
+
+12. Recurso para recomendar um restaurante/comida aleatória com melhor avaliação
 
 ## Quadro Scrum
 
