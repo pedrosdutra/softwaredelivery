@@ -75,16 +75,15 @@
 
 ## Quadro Scrum
 
+> [**Link do Quadro**](https://projeto-unicap-sistema-delivery.atlassian.net/jira/software/projects/SCRUM/boards/1)
+
 ### Usamos o Jira para fazer:
 
-<!--<img src="assets/board.png">
-<img src="assets/backlog_1.png">
-<img src="assets/backlog_2.png">
-<img src="assets/backlog_3.png">
-<img src="assets/backlog_4.png">
-<img src="assets/backlog_5.png">-->
+<img src="assets/board.png">
+<img src="assets/backlog.png">
 
-<!--
+
+<!-- DEPOIS INCLUIR: --
 ## Como usar?
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
