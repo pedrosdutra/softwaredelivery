@@ -77,14 +77,47 @@
 
 ## Quadro Scrum
 
-> [**Link do Quadro**](https://projeto-unicap-sistema-delivery.atlassian.net/jira/software/projects/SCRUM/boards/1)
+> [**Link do Jira**](https://projeto-unicap-sistema-delivery.atlassian.net/jira/software/projects/SCRUM/boards/1)
 
 ### Usamos o Jira para fazer:
 
 <img src="assets/board.png">
 <img src="assets/backlog.png">
 
+## Telas para o projeto
 
+1. Telas de login/cadastro/cadastro restaurante
+
+[> [**Link do Figma**](https://www.figma.com/design/fk10hlFWE6IKpBmtW9kUEi/Cadastro-user-restaurant?t=g43D6DcT9sHICGxk-0)
+
+2. Tela para Suporte Técnico
+
+[**Link do Figma**](https://www.figma.com/make/pS92vC14a0VCkQw4ji2vtY/Technical-Support-Page?node-id=0-1&p=f&t=yegI2oIWDYobotgQ-0)
+
+3. Tela para o menu principal
+
+
+
+5. Tela para usuário e usuário premium
+
+
+
+6. Tela para o par de comida
+
+
+
+7. Tela para cárdapio
+
+
+
+8. Tela acompanhamento de pedido
+
+
+
+9. Tela de pedido (Restaurante)
+
+
+10.
 <!-- DEPOIS INCLUIR: --
 ## Como usar?
 
