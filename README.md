@@ -1,6 +1,5 @@
 
 <h1 align="center">
-  <br>
   <a href="#"><img src="assets/Segunda Logo do Projeto.png" alt="img" width="200"></a>
   <br>
   Foodly
