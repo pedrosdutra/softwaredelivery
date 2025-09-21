@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="#"><img src="assets/Primeira Imagem do Projeto.png" alt="img" width="200"></a>
+  <a href="#"><img src="assets/Segunda Logo do Projeto.png" alt="img" width="200"></a>
   <br>
   Foodly
   <br>
@@ -88,7 +88,7 @@
 
 1. Telas de login/cadastro/cadastro restaurante
 
-[> [**Link do Figma**](https://www.figma.com/design/fk10hlFWE6IKpBmtW9kUEi/Cadastro-user-restaurant?t=g43D6DcT9sHICGxk-0)
+[**Link do Figma**](https://www.figma.com/design/fk10hlFWE6IKpBmtW9kUEi/Cadastro-user-restaurant?t=g43D6DcT9sHICGxk-0)
 
 2. Tela para Suporte Técnico
 
