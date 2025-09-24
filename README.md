@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <a href="#"><img src="assets/Segunda Logo do Projeto.png" alt="img" width="200"></a>
   <br>
@@ -41,14 +40,14 @@
 -->
 
 
-## Cargos:
+## 💼 Cargos:
 - Devs Back-end: `Breno / Ivo / Diogo` - Java / Spring  
 - Devs Front-end: `Pedro / Salomão` - Javascript / HTML / Tailwind  
 - Devs Fullstack: `Nedson / Alvin` - Java / Spring / Javascript / HTML / Tailwind  
 - Design: `Pedro / Salomão`
 
 
-## Recursos - Sprints
+## 🗓️ Recursos - Sprints
 
 1. Cadastro de cliente/Entregador/Restaurante  
 
@@ -74,16 +73,16 @@
 
 12. Recurso para recomendar um restaurante/comida aleatória com melhor avaliação
 
-## Quadro Scrum
+## 🎯 Quadro Scrum
 
 > [**Link do Jira**](https://projeto-unicap-sistema-delivery.atlassian.net/jira/software/projects/SCRUM/boards/1)
 
-### Usamos o Jira para fazer:
+### 📌 Usamos o Jira:
 
 <img src="assets/board.png">
 <img src="assets/backlog.png">
 
-## Telas para o projeto
+## 🖥️ Telas para o projeto
 
 1. Telas de login/cadastro/cadastro restaurante
 
@@ -126,7 +125,9 @@ Extra 2. Comida aleatória
 
 [**Link do Figma**](https://www.figma.com/design/SzzSx0Fz3Ns3YcbQ1lz3yq/Tela-Pedido-Aleat%C3%B3rio-com-Melhor-Avalia%C3%A7%C3%A3o?node-id=0-1&t=pdhYhjuZ76VcxcSw-1)
 
+## 🐞 Bug Tracking
 
+[GitHub Issues](https://github.com/pedrosdutra/softwaredelivery/issues)
 <!-- DEPOIS INCLUIR: --
 ## Como usar?
 
