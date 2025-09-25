@@ -25,8 +25,8 @@
   </p>
   
 <p align="center">
-  <a href="#cargos">Cargos</a> •
-  <a href="#recursos">Recursos</a> •
+  <a href="#Cargos">Cargos</a> •
+  <a href="#Recursos - Sprints">Recursos</a> •
    <a href="#quadro-scrum">Quadro Scrum</a> •
   <a href="#como-usar?">Como usar?</a> •
   <a href="#download">Download</a> •
@@ -127,7 +127,10 @@ Extra 2. Comida aleatória
 
 ## 🐞 Bug Tracking
 
-[GitHub Issues](https://github.com/pedrosdutra/softwaredelivery/issues)
+[Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
+
+<img src="assets/Bug Tracker 2.png">
+<img src="assets/Bug Tracker 1.png">
 <!-- DEPOIS INCLUIR: --
 ## Como usar?
 
