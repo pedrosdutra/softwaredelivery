@@ -127,7 +127,7 @@ Extra 2. Comida aleatória
 
 ## 🐞 Bug Tracking
 
-[GitHub Issues](https://github.com/pedrosdutra/softwaredelivery/issues)
+[Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
 
 <img src="assets/Bug Tracker 2.png">
 <img src="assets/Bug Tracker 1.png">
