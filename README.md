@@ -128,6 +128,7 @@ Extra 2. Comida aleatória
 ## 🐞 Bug Tracking
 
 [GitHub Issues](https://github.com/pedrosdutra/softwaredelivery/issues)
+<img scr="Bug Tracker 1.png">
 <!-- DEPOIS INCLUIR: --
 ## Como usar?
 
