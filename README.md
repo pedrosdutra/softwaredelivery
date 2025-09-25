@@ -84,6 +84,8 @@
 
 ## 🖥️ Telas para o projeto
 
+> [**Link do Figma**](https://www.figma.com/files/team/1550588552907812239/project/454881178/Projeto-de-equipe?fuid=1550588548872029139)
+
 1. Telas de login/cadastro/cadastro restaurante
 
 <img src="assets/usercadastro.png">
