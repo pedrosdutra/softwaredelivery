@@ -25,8 +25,8 @@
   </p>
   
 <p align="center">
-  <a href="#cargos">Cargos</a> •
-  <a href="#recursos">Recursos</a> •
+  <a href="#Cargos">Cargos</a> •
+  <a href="#Recursos - Sprints">Recursos</a> •
    <a href="#quadro-scrum">Quadro Scrum</a> •
   <a href="#como-usar?">Como usar?</a> •
   <a href="#download">Download</a> •
