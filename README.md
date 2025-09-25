@@ -86,44 +86,61 @@
 
 1. Telas de login/cadastro/cadastro restaurante
 
-[**Link do Figma**](https://www.figma.com/design/fk10hlFWE6IKpBmtW9kUEi/Cadastro-user-restaurant?t=g43D6DcT9sHICGxk-0)
+<img src="assets/usercadastro.png">
+<img src="assets/userlogin.png">
+<img src="assets/restaurantecadastro.png">
+<img src="assets/restaurantelogin.png">
 
 2. Tela para Suporte Técnico
 
-[**Link do Figma**](https://www.figma.com/make/pS92vC14a0VCkQw4ji2vtY/Technical-Support-Page?node-id=0-1&p=f&t=yegI2oIWDYobotgQ-0)
+<img src="assets/telasuporte.png">
 
 3. Tela para o menu principal
 
-
+<img src="assets/telaprincipal.png">
+<img src="assets/telafollowpedido+match+random.png"> 
+<img src="assets/telasobre.png">
 
 5. Tela para usuário e usuário premium
 
+<img src="assets/telauser.png">
+<img src="assets/telauserpremium.png">
 
+6. Tela para restaurantes
 
-6. Tela para o par de comida
-
-
+<img src="assets/telarestaurantes.png">
 
 7. Tela para cárdapio
 
+<img src="assets/telacardapio.png">
 
+8. Tela de pedido (Restaurante)
 
-8. Tela acompanhamento de pedido
+<img src="assets/telapainelrestaurante.png">
 
+9. Tela para rastreamento
 
+<img src="assets/telarastreio.png">
 
-9. Tela de pedido (Restaurante)
+10. Tela para avaliação
 
+<img src="assets/telaavaliacao.png">
 
-10. ?
+11. Tela de notificação
+
+<img src="assets/telanotifi.png">
+
+12. Tela de carrinho
+
+<img src="assets/telacarrinho.png">
 
 Extra 1. Seu Par de Comida
 
-[**Link do Figma**](https://www.figma.com/design/lP8lgnC6g5Co81xlD7OAF7/Tela-Par-de-Comida?node-id=0-1&t=s6gs41OoOFB9RJIm-1)
+<img src="assets/telamatch.png">
 
 Extra 2. Comida aleatória
 
-[**Link do Figma**](https://www.figma.com/design/SzzSx0Fz3Ns3YcbQ1lz3yq/Tela-Pedido-Aleat%C3%B3rio-com-Melhor-Avalia%C3%A7%C3%A3o?node-id=0-1&t=pdhYhjuZ76VcxcSw-1)
+<img src="assets/telarandom.png">
 
 ## 🐞 Bug Tracking
 
