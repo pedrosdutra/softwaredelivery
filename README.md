@@ -129,8 +129,8 @@ Extra 2. Comida aleatória
 
 [GitHub Issues](https://github.com/pedrosdutra/softwaredelivery/issues)
 
-<img scr="assets/Bug Tracker 1.png">
-<img scr="assets/Bug Tracker 2.png">
+<img src="assets/Bug Tracker 1.png">
+<img src="assets/Bug Tracker 2.png">
 <!-- DEPOIS INCLUIR: --
 ## Como usar?
 
