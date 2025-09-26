@@ -149,8 +149,17 @@ Extra 2. Comida aleatória
 
 [Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
 
+<img src="assets/Bug Tracker 7.png">
+<img src="assets/Bug Tracker 6.png">
+<img src="assets/Bug Tracker 5.png">
+<img src="assets/Bug Tracker 4.png">
+<img src="assets/Bug Tracker 3.png">
 <img src="assets/Bug Tracker 2.png">
 <img src="assets/Bug Tracker 1.png">
+
+
+
+
 <!-- DEPOIS INCLUIR: --
 ## Como usar?
 
