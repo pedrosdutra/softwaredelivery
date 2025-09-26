@@ -158,6 +158,31 @@ Extra 2. Comida aleatória
 <img src="assets/Bug Tracker 1.png">
 
 
+## Fluxo BPMN
+
+> [Link do Fluxo](https://fluxo-bpmn.netlify.app/)
+
+## Diagramas 
+
+<img src="assets/diagrama_1.jpeg">
+<img src="assets/diagrama_2.jpeg">
+<img src="assets/diagrama_3.jpeg">
+<img src="assets/diagrama_4.jpeg">
+<img src="assets/diagrama_5.jpeg">
+<img src="assets/diagrama_6.jpeg">
+<img src="assets/diagrama_7.jpeg">
+<img src="assets/diagrama_8.jpeg">
+<img src="assets/diagrama_9.jpeg">
+<img src="assets/diagrama_10.jpeg">
+<img src="assets/diagrama_11.jpeg">
+<img src="assets/diagrama_12.jpeg">
+
+
+
+
+
+
+
 
 
 <!-- DEPOIS INCLUIR: --
@@ -228,8 +253,4 @@ MIT
 > GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
 > Twitter [@amit_merchant](https://twitter.com/amit_merchant)
 -->
-
-
-
-## Diagrama
 
