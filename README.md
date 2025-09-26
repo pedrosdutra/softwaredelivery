@@ -164,17 +164,29 @@ Extra 2. Comida aleatória
 
 ## Diagramas 
 
+- Diagrama H1: <br>
 <img src="assets/diagrama_1.jpeg">
+- Diagrama H2: <br>
 <img src="assets/diagrama_2.jpeg">
+- Diagrama H3: <br>
 <img src="assets/diagrama_3.jpeg">
+- Diagrama H4: <br>
 <img src="assets/diagrama_4.jpeg">
-<img src="assets/diagrama_5.jpeg">
+- Diagrama H5: <br>
+<img src="assets/diagrama_5.jpeg"> <br>
+- Diagrama H6: <br>
 <img src="assets/diagrama_6.jpeg">
+- Diagrama H7: <br>
 <img src="assets/diagrama_7.jpeg">
+- Diagrama H8: <br>
 <img src="assets/diagrama_8.jpeg">
+- Diagrama H9: <br>
 <img src="assets/diagrama_9.jpeg">
+- Diagrama H10: <br>
 <img src="assets/diagrama_10.jpeg">
+- Diagrama HEX1: <br>
 <img src="assets/diagrama_11.jpeg">
+- Diagrama HEX2: <br>
 <img src="assets/diagrama_12.jpeg">
 
 
