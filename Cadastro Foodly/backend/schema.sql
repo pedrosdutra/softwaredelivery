@@ -1,3 +1,16 @@
+
+-- Tabela de Clientes
+CREATE TABLE IF NOT EXISTS clientes (
+  id           INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome         TEXT NOT NULL,
+  email        TEXT NOT NULL UNIQUE,
+  telefone     TEXT,
+  senha        TEXT NOT NULL,
+  criado_em    DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- Tabela de Endereços dos Clientes
 CREATE TABLE IF NOT EXISTS enderecos_clientes (
   id           INTEGER PRIMARY KEY AUTOINCREMENT,
   cliente_id   INTEGER NOT NULL,
@@ -15,8 +28,5 @@ CREATE TABLE IF NOT EXISTS enderecos_clientes (
       'RR','SC','SP','SE','TO'
     )
   ),
-  referencia   VARCHAR(100),
-  is_padrao    INTEGER DEFAULT 0,
-  criado_em    DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
 );
