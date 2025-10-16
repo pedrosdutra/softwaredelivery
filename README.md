@@ -148,7 +148,7 @@ Extra 2. Comida aleatória
 ## 🐞 Bug Tracking
 
 [Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
-
+<!--
 <img src="assets do README/Bug Tracker 7.png">
 <img src="assets do README/Bug Tracker 6.png">
 <img src="assets do README/Bug Tracker 5.png">
@@ -156,7 +156,7 @@ Extra 2. Comida aleatória
 <img src="assets do README/Bug Tracker 3.png">
 <img src="assets do README/Bug Tracker 2.png">
 <img src="assets do README/Bug Tracker 1.png">
-
+-->
 
 ## Fluxo BPMN
 
