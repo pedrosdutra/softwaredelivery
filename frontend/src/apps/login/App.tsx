@@ -5,7 +5,7 @@ import { Label } from './components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 import { Separator } from './components/ui/separator';
 import { Eye, EyeOff, User, Mail, Phone, Lock } from 'lucide-react';
-import exampleImage from './assets/SegundaLogodoProjeto.png';
+import exampleImage from '../assets/SegundaLogodoProjeto.png';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState('signup'); // 'signup' ou 'login'
