@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="#"><img src="assets/Segunda Logo do Projeto.png" alt="img" width="200"></a>
+  <a href="#"><img src="assets do README/Segunda Logo do Projeto.png" alt="img" width="200"></a>
   <br>
   Foodly
   <br>
@@ -79,8 +79,8 @@
 
 ### 📌 Usamos o Jira:
 
-<img src="assets/board.png">
-<img src="assets/backlog.png">
+<img src="assets do README/board.png">
+<img src="assets do README/backlog.png">
 
 ## 🖥️ Telas para o projeto
 
@@ -89,73 +89,73 @@
 
 1. Telas de login/cadastro/cadastro restaurante
 
-<img src="assets/usercadastro.png">
-<img src="assets/userlogin.png">
-<img src="assets/restaurantecadastro.png">
-<img src="assets/restaurantelogin.png">
+<img src="assets do README/usercadastro.png">
+<img src="assets do README/userlogin.png">
+<img src="assets do README/restaurantecadastro.png">
+<img src="assets do README/restaurantelogin.png">
 
 2. Tela para Suporte Técnico
 
-<img src="assets/telasuporte.png">
+<img src="assets do README/telasuporte.png">
 
 3. Tela para o menu principal
 
-<img src="assets/telaprincipal.png">
-<img src="assets/telafollowpedido+match+random.png"> 
-<img src="assets/telasobre.png">
+<img src="assets do README/telaprincipal.png">
+<img src="assets do README/telafollowpedido+match+random.png"> 
+<img src="assets do README/telasobre.png">
 
 5. Tela para usuário e usuário premium
 
-<img src="assets/telauser.png">
-<img src="assets/telauserpremium.png">
+<img src="assets do README/telauser.png">
+<img src="assets do README/telauserpremium.png">
 
 6. Tela para restaurantes
 
-<img src="assets/telarestaurantes.png">
+<img src="assets do README/telarestaurantes.png">
 
 7. Tela para cárdapio
 
-<img src="assets/telacardapio.png">
+<img src="assets do README/telacardapio.png">
 
 8. Tela de pedido (Restaurante)
 
-<img src="assets/telapainelrestaurante.png">
+<img src="assets do README/telapainelrestaurante.png">
 
 9. Tela para rastreamento
 
-<img src="assets/telarastreio.png">
+<img src="assets do README/telarastreio.png">
 
 10. Tela para avaliação
 
-<img src="assets/telaavaliacao.png">
+<img src="assets do README/telaavaliacao.png">
 
 11. Tela de notificação
 
-<img src="assets/telanotifi.png">
+<img src="assets do README/telanotifi.png">
 
 12. Tela de carrinho
 
-<img src="assets/telacarrinho.png">
+<img src="assets do README/telacarrinho.png">
 
 Extra 1. Seu Par de Comida
 
-<img src="assets/telamatch.png">
+<img src="assets do README/telamatch.png">
 
 Extra 2. Comida aleatória
 
-<img src="assets/telarandom.png">
+<img src="assets do README/telarandom.png">
 
 ## 🐞 Bug Tracking
 
 [Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
 
-<img src="assets/Bug Tracker 7.png">
-<img src="assets/Bug Tracker 6.png">
-<img src="assets/Bug Tracker 5.png">
-<img src="assets/Bug Tracker 4.png">
-<img src="assets/Bug Tracker 3.png">
-<img src="assets/Bug Tracker 2.png">
-<img src="assets/Bug Tracker 1.png">
+<img src="assets do README/Bug Tracker 7.png">
+<img src="assets do README/Bug Tracker 6.png">
+<img src="assets do README/Bug Tracker 5.png">
+<img src="assets do README/Bug Tracker 4.png">
+<img src="assets do README/Bug Tracker 3.png">
+<img src="assets do README/Bug Tracker 2.png">
+<img src="assets do README/Bug Tracker 1.png">
 
 
 ## Fluxo BPMN
@@ -165,29 +165,29 @@ Extra 2. Comida aleatória
 ## Diagramas 
 
 - Diagrama H1: <br>
-<img src="assets/diagrama_1.jpeg">
+<img src="assets do README/diagrama_1.jpeg">
 - Diagrama H2: <br>
-<img src="assets/diagrama_2.jpeg">
+<img src="assets do README/diagrama_2.jpeg">
 - Diagrama H3: <br>
-<img src="assets/diagrama_3.jpeg">
+<img src="assets do README/diagrama_3.jpeg">
 - Diagrama H4: <br>
-<img src="assets/diagrama_4.jpeg">
+<img src="assets do README/diagrama_4.jpeg">
 - Diagrama H5: <br>
-<img src="assets/diagrama_5.jpeg"> <br>
+<img src="assets do README/diagrama_5.jpeg"> <br>
 - Diagrama H6: <br>
-<img src="assets/diagrama_6.jpeg">
+<img src="assets do README/diagrama_6.jpeg">
 - Diagrama H7: <br>
-<img src="assets/diagrama_7.jpeg">
+<img src="assets do README/diagrama_7.jpeg">
 - Diagrama H8: <br>
-<img src="assets/diagrama_8.jpeg">
+<img src="assets do README/diagrama_8.jpeg">
 - Diagrama H9: <br>
-<img src="assets/diagrama_9.jpeg">
+<img src="assets do README/diagrama_9.jpeg">
 - Diagrama H10: <br>
-<img src="assets/diagrama_10.jpeg">
+<img src="assets do README/diagrama_10.jpeg">
 - Diagrama HEX1: <br>
-<img src="assets/diagrama_11.jpeg">
+<img src="assets do README/diagrama_11.jpeg">
 - Diagrama HEX2: <br>
-<img src="assets/diagrama_12.jpeg">
+<img src="assets do README/diagrama_12.jpeg">
 
 
 
