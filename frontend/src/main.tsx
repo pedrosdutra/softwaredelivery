@@ -1,10 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './apps/login/App';
-import './index.css'; // Tailwind ou CSS global
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginApp from "./apps/login/LoginApp";
+import MenuClienteApp from "./apps/menu-cliente/MenuClienteApp";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginApp />} />
+        <Route path="/menu" element={<MenuClienteApp />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
