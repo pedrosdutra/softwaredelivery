@@ -8,11 +8,14 @@ import { Card, CardContent } from "./ui/card";
 import { useCart } from "../contexts/CartContext";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import foodlyLogo from "../../assets/SegundaLogodoProjeto.png";
+import { useNavigate } from 'react-router-dom';
 
 export function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const { getTotalItems } = useCart();
+  const navigate = useNavigate();
+
 
   const notifications = [
     {
@@ -201,7 +204,7 @@ export function Header() {
             )}
           </div>
 
-          {/* Cart */}
+        {/* Cart */}
           <Button 
             variant="ghost" 
             size="icon" 
@@ -216,12 +219,20 @@ export function Header() {
             )}
           </Button>
           
-          <Button variant="ghost" size="icon" className="hidden md:flex">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="hidden md:flex"
+            onClick={() => navigate('/login')}
+          >
             <User className="h-5 w-5" />
           </Button>
 
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />
+          </Button>
+
+        <Button variant="ghost" size="icon" className="hidden md:flex" onClick={() => navigate('/login')}>  
           </Button>
         </div>
       </div>

@@ -82,14 +82,15 @@ export default function LoginApp() {
     if (!validatePhoneNumber(formData.phone)) { setPhoneError(true); hasError = true; }
     if (hasError) return;
     console.log('Dados do cadastro:', formData);
-    navigate("/menu");
+    navigate("/menu-cliente");
   };
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Dados do login:', loginData);
-    navigate("/menu");
+    navigate("/menu-cliente");
   };
+
 
   // Tela de login
   if (currentScreen === 'login') {

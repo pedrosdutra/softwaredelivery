@@ -8,6 +8,7 @@ import { Footer } from "./components/Footer";
 import { CartProvider } from "./contexts/CartContext";
 import { Toaster } from "./components/ui/sonner";
 
+
 export default function App() {
   return (
     <CartProvider>
