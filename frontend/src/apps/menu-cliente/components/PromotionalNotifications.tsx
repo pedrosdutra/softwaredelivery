@@ -40,12 +40,12 @@ export function PromotionalNotifications() {
 
   const handleViewPromotion = (restaurant: string) => {
     // Redireciona para site da promoção
-    const promotionUrl = `https://www.ifood.com.br/delivery/${restaurant.toLowerCase().replace(' ', '-')}/promocoes`;
+    const promotionUrl = `https://www.foodly.com.br/delivery/${restaurant.toLowerCase().replace(' ', '-')}/promocoes`;
     window.open(promotionUrl, '_blank');
   };
 
   return (
-    <section className="py-16 bg-secondary/30">
+    <section className="py-16 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -73,7 +73,7 @@ export function PromotionalNotifications() {
                   </Badge>
                 </div>
                 <div className="absolute top-3 right-3">
-                  <Badge variant="secondary" className="bg-white/90 text-foreground">
+                  <Badge variant="secondary" className="bg-white text-foreground">
                     {promotion.restaurant}
                   </Badge>
                 </div>
@@ -109,7 +109,7 @@ export function PromotionalNotifications() {
           <Button 
             variant="outline" 
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-            onClick={() => window.open('https://www.ifood.com.br/promocoes', '_blank')}
+            onClick={() => window.open('https://www.foodly.com.br/promocoes', '_blank')}
           >
             Ver Todas as Promoções
             <ExternalLink className="h-4 w-4 ml-2" />

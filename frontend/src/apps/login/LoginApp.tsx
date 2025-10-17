@@ -177,7 +177,7 @@ export default function LoginApp() {
           </Card>
 
           <div className="text-center text-sm text-gray-500">
-            <p>© 2024 Foodly. Todos os direitos reservados.</p>
+            <p>© 2025 Foodly. Todos os direitos reservados.</p>
           </div>
         </div>
       </div>
@@ -300,19 +300,13 @@ export default function LoginApp() {
                 </p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-gray-500">
-                  Ao criar uma conta, você concorda com nossos{' '}
-                  <button className="text-orange-600 hover:text-orange-700 hover:underline">Termos de Uso</button>{' '}
-                  e{' '}
-                  <button className="text-orange-600 hover:text-orange-700 hover:underline">Política de Privacidade</button>
-                </p>
               </div>
             </div>
           </CardContent>
         </Card>
 
         <div className="text-center text-sm text-gray-500">
-          <p>© 2024 Foodly. Todos os direitos reservados.</p>
+          <p>© 2025 Foodly. Todos os direitos reservados.</p>
         </div>
       </div>
     </div>
