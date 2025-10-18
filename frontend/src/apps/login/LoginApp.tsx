@@ -4,7 +4,7 @@ import { Input } from './components/ui/input';
 import { Label } from './components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
 import { Separator } from './components/ui/separator';
-import { Eye, EyeOff, User, Mail, Phone, Lock } from 'lucide-react';
+import { Eye, EyeOff, User, Mail, Phone, Lock, MapPin, Building2, Home, Hash } from 'lucide-react';
 import exampleImage from '../assets/SegundaLogodoProjeto.png';
 import { useNavigate } from "react-router-dom";
 
@@ -12,19 +12,31 @@ export default function LoginApp() {
   const navigate = useNavigate();
   const [currentScreen, setCurrentScreen] = useState('signup'); // 'signup' ou 'login'
   const [showPassword, setShowPassword] = useState(false);
+
+  // Estado para cadastro
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    password: ''
+    password: '',
+    cep: '',
+    endereco: '',
+    numero: '',
+    complemento: '',
+    bairro: '',
+    cidade: ''
   });
-  const [phoneError, setPhoneError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
+
+  // Estado para login
   const [loginData, setLoginData] = useState({
     email: '',
     password: ''
   });
 
+  const [phoneError, setPhoneError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+
+  // Formatação e validação
   const formatPhoneNumber = (value: string) => {
     const numbers = value.replace(/\D/g, '');
     const limited = numbers.slice(0, 11);
@@ -38,9 +50,9 @@ export default function LoginApp() {
 
   const validateEmail = (email: string) => {
     const validDomains = [
-      '@gmail.com', '@hotmail.com', '@outlook.com', '@yahoo.com', 
-      '@icloud.com', '@live.com', '@msn.com', '@uol.com.br', 
-      '@bol.com.br', '@terra.com.br', '@ig.com.br', '@unicap.br'
+      '@gmail.com', '@hotmail.com', '@outlook.com', '@yahoo.com',
+      '@icloud.com', '@live.com', '@msn.com', '@uol.com.br',
+      '@bol.com.br', '@terra.com.br', '@ig.com.br', '@unicap.br', '@admin.com'
     ];
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) return false;
@@ -77,29 +89,39 @@ export default function LoginApp() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     let hasError = false;
     if (!validateEmail(formData.email)) { setEmailError(true); hasError = true; }
     if (!validatePhoneNumber(formData.phone)) { setPhoneError(true); hasError = true; }
-    if (hasError) return;
-    console.log('Dados do cadastro:', formData);
+
+    // Verifica campos obrigatórios
+    const requiredFields = ['name', 'email', 'phone', 'password', 'cep', 'endereco', 'numero', 'bairro', 'cidade'];
+    for (const field of requiredFields) {
+      if (!formData[field as keyof typeof formData]) hasError = true;
+    }
+
+    if (hasError) {
+      alert('Por favor, preencha todos os campos obrigatórios corretamente.');
+      return;
+    }
+
+    console.log('📋 Dados do cadastro:', formData);
     navigate("/menu");
   };
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Dados do login:', loginData);
+    console.log('🔐 Dados do login:', loginData);
     navigate("/menu");
   };
 
-  // Tela de login
+  // 🔐 Tela de Login
   if (currentScreen === 'login') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center p-4">
         <div className="w-full max-w-md space-y-6">
           <div className="text-center space-y-4">
-            <div className="mx-auto w-24 h-24">
-              <img src={exampleImage} alt="Foodly Logo" className="w-full h-full object-contain" />
-            </div>
+            <img src={exampleImage} alt="Foodly Logo" className="mx-auto w-24 h-24 object-contain" />
             <div className="space-y-2">
               <h1 className="text-3xl font-bold text-gray-900">Bem-vindo de volta!</h1>
               <p className="text-gray-600">Faça login e continue aproveitando nossos sabores</p>
@@ -109,14 +131,16 @@ export default function LoginApp() {
           <Card className="shadow-xl border-0">
             <CardHeader className="space-y-1 pb-4">
               <CardTitle className="text-2xl text-center text-gray-900">Entrar</CardTitle>
-              <CardDescription className="text-center text-gray-600">Faça login para acessar sua conta</CardDescription>
+              <CardDescription className="text-center text-gray-600">Acesse sua conta</CardDescription>
             </CardHeader>
+
             <CardContent className="space-y-6">
               <form onSubmit={handleLoginSubmit} className="space-y-4">
+                {/* Email */}
                 <div className="space-y-2">
                   <Label htmlFor="loginEmail" className="text-gray-700">Email</Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-4 w-4" />
                     <Input
                       id="loginEmail"
                       name="email"
@@ -129,10 +153,12 @@ export default function LoginApp() {
                     />
                   </div>
                 </div>
+
+                {/* Senha */}
                 <div className="space-y-2">
                   <Label htmlFor="loginPassword" className="text-gray-700">Senha</Label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-4 w-4" />
                     <Input
                       id="loginPassword"
                       name="password"
@@ -146,53 +172,49 @@ export default function LoginApp() {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                     >
                       {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </button>
                   </div>
                 </div>
+
+                {/* Esqueci senha */}
                 <div className="text-right">
-                  <button type="button" className="text-orange-600 hover:text-orange-700 hover:underline transition-colors" onClick={() => navigate("/suporte")}>
+                  <button type="button" className="text-orange-600 hover:text-orange-700 hover:underline" onClick={() => navigate("/suporte")}>
                     Esqueci minha senha
                   </button>
                 </div>
-                <Button type="submit" className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white h-12 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-[1.02]">
+
+                <Button type="submit" className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white h-12 rounded-lg shadow-lg hover:scale-[1.02] transition-all">
                   Entrar
                 </Button>
               </form>
 
-              <div className="space-y-4">
-                <Separator className="my-4" />
-                <div className="text-center">
-                  <p className="text-gray-600">
-                    Não tem uma conta?{' '}
-                    <button onClick={() => setCurrentScreen('signup')} className="text-orange-600 hover:text-orange-700 font-medium hover:underline transition-colors">
-                      Cadastre-se
-                    </button>
-                  </p>
-                </div>
-              </div>
+              <Separator />
+              <p className="text-center text-gray-600">
+                Não tem uma conta?{' '}
+                <button onClick={() => setCurrentScreen('signup')} className="text-orange-600 hover:underline">
+                  Cadastre-se
+                </button>
+              </p>
             </CardContent>
           </Card>
-
-          <div className="text-center text-sm text-gray-500">
-            <p>© 2025 Foodly. Todos os direitos reservados.</p>
-          </div>
+          <p className="text-center text-sm text-gray-500">
+            © 2025 Foodly. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     );
   }
 
-  // Tela de cadastro
+  // 🧾 Tela de Cadastro
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center space-y-4">
-          <div className="mx-auto w-24 h-24">
-            <img src={exampleImage} alt="Foodly Logo" className="w-full h-full object-contain" />
-          </div>
-          <div className="space-y-2">
+          <img src={exampleImage} alt="Foodly Logo" className="mx-auto w-24 h-24 object-contain" />
+          <div>
             <h1 className="text-3xl font-bold text-gray-900">Bem-vindo ao Foodly!</h1>
             <p className="text-gray-600">Crie sua conta e comece a pedir seus pratos favoritos</p>
           </div>
@@ -201,113 +223,80 @@ export default function LoginApp() {
         <Card className="shadow-xl border-0">
           <CardHeader className="space-y-1 pb-4">
             <CardTitle className="text-2xl text-center text-gray-900">Criar Conta</CardTitle>
-            <CardDescription className="text-center text-gray-600">Preencha os dados abaixo para se cadastrar</CardDescription>
+            <CardDescription className="text-center text-gray-600">Preencha seus dados abaixo</CardDescription>
           </CardHeader>
+
           <CardContent className="space-y-6">
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-gray-700">Nome Completo</Label>
-                <div className="relative">
-                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    placeholder="Digite seu nome completo"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="pl-10 bg-gray-50 border-gray-200 focus:border-orange-500 focus:ring-orange-500"
-                    required
-                  />
+              {/* Nome */}
+              <Label htmlFor="name" className="text-gray-700">Nome Completo</Label>
+              <Input id="name" name="name" value={formData.name} onChange={handleInputChange} placeholder="Digite seu nome completo" required />
+
+              {/* Email */}
+              <Label htmlFor="email" className="text-gray-700">Email</Label>
+              <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} onBlur={handleEmailBlur} placeholder='Digite seu email' required />
+
+              {/* Telefone */}
+              <Label htmlFor="phone" className="text-gray-700">Telefone</Label>
+              <Input id="phone" name="phone" value={formData.phone} onChange={handleInputChange} onBlur={handlePhoneBlur} placeholder="(11) 99999-9999" required />
+
+              {/* CEP */}
+              <Label htmlFor="cep" className="text-gray-700">CEP</Label>
+              <Input id="cep" name="cep" value={formData.cep} onChange={(e) => setFormData(prev => ({ ...prev, cep: e.target.value.replace(/\D/g, '').replace(/(\d{5})(\d{3})/, '$1-$2').slice(0, 9) }))} placeholder="00000-000" required />
+
+              {/* Endereço */}
+              <Label htmlFor="endereco" className="text-gray-700">Endereço</Label>
+              <Input id="endereco" name="endereco" value={formData.endereco} onChange={handleInputChange} placeholder="Rua, avenida, travessa..." required />
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="numero" className="text-gray-700">Número</Label>
+                  <Input id="numero" name="numero" value={formData.numero} onChange={handleInputChange} placeholder="123" required />
+                </div>
+                <div>
+                  <Label htmlFor="complemento" className="text-gray-700">Complemento</Label>
+                  <Input id="complemento" name="complemento" value={formData.complemento} onChange={handleInputChange} placeholder="Apto, bloco, etc." />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-gray-700">Email</Label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Digite seu email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    onBlur={handleEmailBlur}
-                    className={`pl-10 bg-gray-50 ${emailError ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-orange-500 focus:ring-orange-500'}`}
-                    required
-                  />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="bairro" className="text-gray-700">Bairro</Label>
+                  <Input id="bairro" name="bairro" value={formData.bairro} onChange={handleInputChange} placeholder="Seu bairro" required />
                 </div>
-                {emailError && <p className="text-sm text-red-600">Email inválido. Use um domínio válido (@gmail.com, @hotmail.com, etc)</p>}
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="phone" className="text-gray-700">Telefone</Label>
-                <div className="relative">
-                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="(11) 99999-9999"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    onBlur={handlePhoneBlur}
-                    className={`pl-10 bg-gray-50 ${phoneError ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-orange-500 focus:ring-orange-500'}`}
-                    required
-                  />
-                </div>
-                {phoneError && <p className="text-sm text-red-600">Campo inválido. Use o formato: (00) 00000-0000</p>}
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="password" className="text-gray-700">Senha</Label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-                  <Input
-                    id="password"
-                    name="password"
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Digite sua senha"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    className="pl-10 pr-10 bg-gray-50 border-gray-200 focus:border-orange-500 focus:ring-orange-500"
-                    required
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                  >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                  </button>
+                <div>
+                  <Label htmlFor="cidade" className="text-gray-700">Cidade</Label>
+                  <Input id="cidade" name="cidade" value={formData.cidade} onChange={handleInputChange} placeholder="Sua cidade" required />
                 </div>
               </div>
 
-              <Button type="submit" className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white h-12 rounded-lg shadow-lg transition-all duration-200 transform hover:scale-[1.02]">
+              {/* Senha */}
+              <Label htmlFor="password" className="text-gray-700">Senha</Label>
+              <div className="relative">
+                <Input id="password" name="password" type={showPassword ? 'text' : 'password'} value={formData.password} onChange={handleInputChange} placeholder="Digite sua senha" required />
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
+              </div>
+
+              <Button type="submit" className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white h-12 rounded-lg shadow-lg hover:scale-[1.02] transition-all">
                 Criar Conta
               </Button>
             </form>
 
-            <div className="space-y-4">
-              <Separator className="my-4" />
-              <div className="text-center">
-                <p className="text-gray-600">
-                  Já tem uma conta?{' '}
-                  <button onClick={() => setCurrentScreen('login')} className="text-orange-600 hover:text-orange-700 font-medium hover:underline transition-colors">
-                    Faça login
-                  </button>
-                </p>
-              </div>
-              <div className="text-center">
-              </div>
-            </div>
+            <Separator />
+            <p className="text-center text-gray-600">
+              Já tem uma conta?{' '}
+              <button onClick={() => setCurrentScreen('login')} className="text-orange-600 hover:underline">
+                Faça login
+              </button>
+            </p>
           </CardContent>
         </Card>
 
-        <div className="text-center text-sm text-gray-500">
-          <p>© 2025 Foodly. Todos os direitos reservados.</p>
-        </div>
+        <p className="text-center text-sm text-gray-500">
+          © 2025 Foodly. Todos os direitos reservados.
+        </p>
       </div>
     </div>
   );
