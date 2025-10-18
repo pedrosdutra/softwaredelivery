@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import foodlyLogo from "../assets/SegundaLogodoProjeto.png";
 import { User, Store, ArrowRight } from "lucide-react";
-import "../entrada/styles/globals.css"
 
 export default function EntradaApp() {
   const navigate = useNavigate();
