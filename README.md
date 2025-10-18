@@ -24,17 +24,7 @@
   </a>
   </p>
   
-<p align="center">
-  <a href="#Cargos">Cargos</a> •
-  <a href="#Recursos - Sprints">Recursos</a> •
-   <a href="#quadro-scrum">Quadro Scrum</a> •
-  <a href="#como-usar?">Como usar?</a> •
-  <a href="#download">Download</a> •
-  <a href="#creditos">Creditos</a> •
-  <a href="#relacionado">Relacionado</a> •
-  <a href="#licença">Licença</a>
-</p>
-
+  
 <!--
 ![screenshot](#)
 -->
