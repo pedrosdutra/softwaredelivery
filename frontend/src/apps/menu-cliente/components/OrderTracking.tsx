@@ -4,7 +4,7 @@ import { ExternalLink } from 'lucide-react';
 export function OrderTracking() {
   const handleTrackOrders = () => {
     // Redireciona para site de acompanhamento de pedidos de delivery
-    const trackingUrl = `https://www.ifood.com.br/meus-pedidos`;
+    const trackingUrl = `https://www.foodly.com.br/meus-pedidos`;
     window.open(trackingUrl, '_blank');
   };
 
