@@ -40,7 +40,7 @@ export default function LoginApp() {
     const validDomains = [
       '@gmail.com', '@hotmail.com', '@outlook.com', '@yahoo.com', 
       '@icloud.com', '@live.com', '@msn.com', '@uol.com.br', 
-      '@bol.com.br', '@terra.com.br', '@ig.com.br'
+      '@bol.com.br', '@terra.com.br', '@ig.com.br', '@unicap.br'
     ];
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) return false;
@@ -153,7 +153,7 @@ export default function LoginApp() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <button type="button" className="text-orange-600 hover:text-orange-700 hover:underline transition-colors">
+                  <button type="button" className="text-orange-600 hover:text-orange-700 hover:underline transition-colors" onClick={() => navigate("/suporte")}>
                     Esqueci minha senha
                   </button>
                 </div>
