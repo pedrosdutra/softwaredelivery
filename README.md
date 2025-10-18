@@ -24,7 +24,7 @@
   </a>
   </p>
   
-  
+
 <!--
 ![screenshot](#)
 -->
@@ -32,8 +32,8 @@
 
 ## 💼 Cargos:
 - Devs Back-end: `Breno / Ivo / Diogo` - Java / Spring  
-- Devs Front-end: `Pedro / Salomão` - Javascript / HTML / Tailwind  
-- Devs Fullstack: `Nedson / Alvin` - Java / Spring / Javascript / HTML / Tailwind  
+- Devs Front-end: `Salomão` - Javascript / HTML / Tailwind  
+- Devs Fullstack: `Pedro / Nedson / Alvin` - Java / Spring / Javascript / HTML / Tailwind  
 - Design: `Pedro / Salomão`
 
 
