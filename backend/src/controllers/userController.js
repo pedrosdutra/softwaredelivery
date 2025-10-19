@@ -6,19 +6,22 @@ import { db } from "../config/db.js";
 // ============================
 export const registerUser = async (req, res) => {
   try {
-    const { name, email, phone, password, cep, endereco, numero, complemento, bairro, cidade } = req.body;
+    const { nome, email, telefone, senha, cep, endereco, numero, complemento, bairro, cidade } = req.body;
 
+    // Verifica se o email já existe
     const [existingUser] = await db.query("SELECT * FROM usuarios WHERE email = ?", [email]);
     if (existingUser.length > 0) {
       return res.status(400).json({ message: "Email já cadastrado." });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // Criptografa a senha
+    const hashedPassword = await bcrypt.hash(senha, 10);
 
+    // Insere no banco
     await db.query(
       `INSERT INTO usuarios (nome, email, telefone, senha, cep, endereco, numero, complemento, bairro, cidade)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [name, email, phone, hashedPassword, cep, endereco, numero, complemento, bairro, cidade]
+      [nome, email, telefone, hashedPassword, cep, endereco, numero, complemento, bairro, cidade]
     );
 
     res.status(201).json({ message: "Usuário cadastrado com sucesso!" });
@@ -33,16 +36,24 @@ export const registerUser = async (req, res) => {
 // ============================
 export const loginUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
-    const [rows] = await db.query("SELECT * FROM usuarios WHERE email = ?", [email]);
+    // Aceita tanto "senha" quanto "password"
+    const { email, senha, password } = req.body;
+    const userPassword = senha || password;
 
+    if (!email || !userPassword) {
+      return res.status(400).json({ message: "Email e senha são obrigatórios." });
+    }
+
+    // Busca o usuário pelo email
+    const [rows] = await db.query("SELECT * FROM usuarios WHERE email = ?", [email]);
     if (rows.length === 0) {
       return res.status(404).json({ message: "Usuário não encontrado." });
     }
 
     const user = rows[0];
-    const isValid = await bcrypt.compare(password, user.senha);
 
+    // Compara a senha com o hash salvo
+    const isValid = await bcrypt.compare(userPassword, user.senha);
     if (!isValid) {
       return res.status(401).json({ message: "Senha incorreta." });
     }
@@ -51,22 +62,32 @@ export const loginUser = async (req, res) => {
 
     res.json({
       message: "Login realizado com sucesso!",
-      user: {
-        id: user.id,
-        nome: user.nome,
-        email: user.email,
-        telefone: user.telefone,
-        cep: user.cep,
-        endereco: user.endereco,
-        numero: user.numero,
-        complemento: user.complemento,
-        bairro: user.bairro,
-        cidade: user.cidade,
-        criado_em: user.criado_em,
-      },
+      user,
     });
   } catch (err) {
     console.error("❌ Erro no login:", err);
     res.status(500).json({ message: "Erro no login." });
+  }
+};
+
+// ============================
+// ✏️ ATUALIZAR PERFIL DE USUÁRIO
+// ============================
+export const updateUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { nome, email, telefone, cep, endereco, numero, complemento, bairro, cidade } = req.body;
+
+    await db.query(
+      `UPDATE usuarios 
+       SET nome=?, email=?, telefone=?, cep=?, endereco=?, numero=?, complemento=?, bairro=?, cidade=?
+       WHERE id=?`,
+      [nome, email, telefone, cep, endereco, numero, complemento, bairro, cidade, id]
+    );
+
+    res.json({ message: "Usuário atualizado com sucesso!" });
+  } catch (err) {
+    console.error("❌ Erro ao atualizar usuário:", err);
+    res.status(500).json({ message: "Erro ao atualizar usuário." });
   }
 };

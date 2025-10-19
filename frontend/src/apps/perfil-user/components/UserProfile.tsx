@@ -1,21 +1,35 @@
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
-import { EditProfileSheet } from './EditProfileSheet';
-import { OrderReportSheet } from './OrderReportSheet';
-import { User, Mail, Phone, MapPin, Edit, Headphones, FileText, ChevronRight, Star } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
+import { EditProfileSheet } from "./EditProfileSheet";
+import { OrderReportSheet } from "./OrderReportSheet";
+import {
+  User,
+  Mail,
+  Phone,
+  MapPin,
+  Edit,
+  Headphones,
+  FileText,
+  ChevronRight,
+  Star,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export interface UserData {
+  id: number;              // ID do usuário
   nome: string;
   email: string;
-  telefone?: string;
-  endereco?: string;
+  telefone: string;
+  cep?: string;
+  endereco: string;
   numero?: string;
+  complemento?: string;
   bairro?: string;
   cidade?: string;
   photo?: string;
+  criado_em?: string;
 }
 
 export function UserProfile() {
@@ -30,22 +44,28 @@ export function UserProfile() {
     if (storedUser) {
       const user = JSON.parse(storedUser);
 
-      // Ajusta os nomes conforme o backend MySQL
       setUserData({
+        id: user.id, // <-- importante para o PUT funcionar
         nome: user.nome,
         email: user.email,
         telefone: user.telefone || "Não informado",
+        cep: user.cep || "",
         endereco: user.endereco || "Endereço não cadastrado",
         numero: user.numero || "",
+        complemento: user.complemento || "",
         bairro: user.bairro || "",
         cidade: user.cidade || "",
-        photo: user.photo || "https://ui-avatars.com/api/?name=" + encodeURIComponent(user.nome),
+        photo:
+          user.photo ||
+          `https://ui-avatars.com/api/?name=${encodeURIComponent(user.nome)}`,
       });
     }
   }, []);
 
+  // 🧩 Atualiza os dados locais e no localStorage
   const handleUpdateProfile = (newData: UserData) => {
     setUserData(newData);
+    localStorage.setItem("user", JSON.stringify(newData)); // salva persistente
     setIsEditOpen(false);
   };
 
@@ -57,7 +77,8 @@ export function UserProfile() {
     );
   }
 
-  const enderecoCompleto = `${userData.endereco}, ${userData.numero || "s/n"} - ${userData.bairro || ""}, ${userData.cidade || ""}`;
+  const enderecoCompleto = `${userData.endereco}, ${userData.numero || "s/n"
+    } - ${userData.bairro || ""}, ${userData.cidade || ""}`;
 
   return (
     <div className="max-w-2xl mx-auto p-6 space-y-6">
@@ -195,6 +216,7 @@ export function UserProfile() {
         </Card>
       </div>
 
+      {/* Sheets */}
       <EditProfileSheet
         isOpen={isEditOpen}
         onOpenChange={setIsEditOpen}
