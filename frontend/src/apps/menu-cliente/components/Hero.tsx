@@ -30,10 +30,6 @@ export function Hero() {
                 <MapPin className="h-4 w-4 text-primary" />
                 <span>Raio de 10km</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 fill-current text-primary" />
-                <span>4.8 (2.5k avaliações)</span>
-              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

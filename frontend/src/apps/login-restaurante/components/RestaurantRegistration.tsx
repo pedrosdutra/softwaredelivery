@@ -36,6 +36,7 @@ export function RestaurantRegistration() {
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [coverPreview, setCoverPreview] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
     register,
@@ -51,6 +52,7 @@ export function RestaurantRegistration() {
     'Açaí', 'Doces & Sobremesas', 'Bebidas', 'Outros'
   ];
 
+  // Upload de imagem
   const handleFileUpload = (files: FileList | null, type: 'logo' | 'cover') => {
     if (files && files[0]) {
       const file = files[0];
@@ -64,30 +66,57 @@ export function RestaurantRegistration() {
     }
   };
 
-  const onSubmit = (data: RestaurantFormData) => {
-    console.log('✅ Dados do restaurante:', data);
-    toast.success('Cadastro realizado com sucesso! Aguarde nossa análise.');
-    navigate('/menu');
+  // Envio dos dados ao backend
+  const onSubmit = async (data: RestaurantFormData) => {
+    try {
+      setIsSubmitting(true);
+
+      const payload = {
+        nome: data.name,
+        email: data.email,
+        senha: data.password,
+        telefone: data.phone,
+        endereco: data.address,
+        cidade: data.address?.split(',').pop()?.trim() || '',
+        categoria: data.category,
+        cnpj: data.cnpj || null,
+        horario_abertura: data.openTime || null,
+        horario_fechamento: data.closeTime || null,
+        taxa_entrega: data.deliveryFee ? parseFloat(data.deliveryFee) : 0,
+        pedido_minimo: data.minOrderValue ? parseFloat(data.minOrderValue) : 0,
+        foto_logo: logoPreview || null,
+        foto_capa: coverPreview || null,
+      };
+
+      const resp = await fetch('http://localhost:3001/api/restaurantes/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const json = await resp.json();
+      if (!resp.ok) throw new Error(json.message || 'Erro ao cadastrar restaurante.');
+
+      toast.success('✅ Restaurante cadastrado com sucesso!');
+      navigate('/menu-restaurante');
+    } catch (err: any) {
+      console.error('❌ Erro no cadastro:', err);
+      toast.error(err?.message || 'Erro ao cadastrar restaurante. Verifique os dados.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
+  // Validação e troca de etapas
   const nextStep = async () => {
     let isValid = false;
-
-    // Validação por etapa
-    if (step === 1) {
-      isValid = await trigger(['name', 'category']);
-    } else if (step === 2) {
-      isValid = await trigger(['address', 'phone', 'email', 'password']);
-    }
-
-    if (isValid) {
-      setStep(Math.min(step + 1, 3));
-    } else {
-      toast.error('Por favor, preencha todos os campos obrigatórios.');
-    }
+    if (step === 1) isValid = await trigger(['name', 'category']);
+    else if (step === 2) isValid = await trigger(['address', 'phone', 'email', 'password']);
+    if (isValid) setStep((prev) => Math.min(prev + 1, 3));
+    else toast.error('Preencha todos os campos obrigatórios antes de continuar.');
   };
 
-  const prevStep = () => setStep(Math.max(step - 1, 1));
+  const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
   return (
     <div className="space-y-6">
@@ -97,19 +126,13 @@ export function RestaurantRegistration() {
           <div key={number} className="flex items-center">
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                step >= number
-                  ? 'bg-orange-500 text-white'
-                  : 'bg-gray-200 text-gray-600'
+                step >= number ? 'bg-orange-500 text-white' : 'bg-gray-200 text-gray-600'
               }`}
             >
               {number}
             </div>
             {number < 3 && (
-              <div
-                className={`w-16 h-1 ml-2 ${
-                  step > number ? 'bg-orange-500' : 'bg-gray-200'
-                }`}
-              />
+              <div className={`w-16 h-1 ml-2 ${step > number ? 'bg-orange-500' : 'bg-gray-200'}`} />
             )}
           </div>
         ))}
@@ -131,8 +154,8 @@ export function RestaurantRegistration() {
         </CardHeader>
 
         <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            {/* Etapa 1 - Informações Básicas */}
+          <form className="space-y-6">
+            {/* Etapa 1 */}
             {step === 1 && (
               <div className="space-y-4">
                 <div>
@@ -142,16 +165,12 @@ export function RestaurantRegistration() {
                     {...register('name', { required: 'Nome é obrigatório' })}
                     placeholder="Ex: Pizzaria do João"
                   />
-                  {errors.name && (
-                    <p className="text-sm text-red-500">{errors.name.message}</p>
-                  )}
+                  {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
                 </div>
 
                 <div>
                   <Label htmlFor="category">Categoria *</Label>
-                  <Select
-                    onValueChange={(value) => setValue('category', value, { shouldValidate: true })}
-                  >
+                  <Select onValueChange={(value) => setValue('category', value, { shouldValidate: true })}>
                     <SelectTrigger>
                       <SelectValue placeholder="Selecione a categoria" />
                     </SelectTrigger>
@@ -167,14 +186,12 @@ export function RestaurantRegistration() {
                     type="hidden"
                     {...register('category', { required: 'Categoria é obrigatória' })}
                   />
-                  {errors.category && (
-                    <p className="text-sm text-red-500">{errors.category.message}</p>
-                  )}
+                  {errors.category && <p className="text-sm text-red-500">{errors.category.message}</p>}
                 </div>
               </div>
             )}
 
-            {/* Etapa 2 - Dados de Contato */}
+            {/* Etapa 2 */}
             {step === 2 && (
               <div className="space-y-4">
                 <div>
@@ -188,9 +205,7 @@ export function RestaurantRegistration() {
                     placeholder="Rua, número, bairro, cidade, CEP"
                     rows={3}
                   />
-                  {errors.address && (
-                    <p className="text-sm text-red-500">{errors.address.message}</p>
-                  )}
+                  {errors.address && <p className="text-sm text-red-500">{errors.address.message}</p>}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -204,9 +219,6 @@ export function RestaurantRegistration() {
                       {...register('phone', { required: 'Telefone é obrigatório' })}
                       placeholder="(11) 99999-9999"
                     />
-                    {errors.phone && (
-                      <p className="text-sm text-red-500">{errors.phone.message}</p>
-                    )}
                   </div>
 
                   <div>
@@ -219,20 +231,13 @@ export function RestaurantRegistration() {
                       type="email"
                       {...register('email', {
                         required: 'E-mail é obrigatório',
-                        pattern: {
-                          value: /\S+@\S+\.\S+/,
-                          message: 'E-mail inválido'
-                        }
+                        pattern: { value: /\S+@\S+\.\S+/, message: 'E-mail inválido' },
                       })}
                       placeholder="contato@restaurante.com"
                     />
-                    {errors.email && (
-                      <p className="text-sm text-red-500">{errors.email.message}</p>
-                    )}
                   </div>
                 </div>
 
-                {/* Senha */}
                 <div>
                   <Label htmlFor="password" className="flex items-center gap-2">
                     <Lock className="w-4 h-4" />
@@ -244,10 +249,7 @@ export function RestaurantRegistration() {
                       type={showPassword ? 'text' : 'password'}
                       {...register('password', {
                         required: 'Senha é obrigatória',
-                        minLength: {
-                          value: 6,
-                          message: 'A senha deve ter no mínimo 6 caracteres'
-                        }
+                        minLength: { value: 6, message: 'A senha deve ter no mínimo 6 caracteres' },
                       })}
                       placeholder="Digite uma senha segura"
                     />
@@ -259,11 +261,9 @@ export function RestaurantRegistration() {
                       {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                     </button>
                   </div>
-                  {errors.password && (
-                    <p className="text-sm text-red-500">{errors.password.message}</p>
-                  )}
                 </div>
 
+                {/* CNPJ com máscara */}
                 <div>
                   <Label htmlFor="cnpj" className="flex items-center gap-2">
                     <FileText className="w-4 h-4" />
@@ -271,14 +271,26 @@ export function RestaurantRegistration() {
                   </Label>
                   <Input
                     id="cnpj"
-                    {...register('cnpj')}
+                    maxLength={18}
                     placeholder="00.000.000/0001-00"
+                    {...register('cnpj')}
+                    onChange={(e) => {
+                      let value = e.target.value.replace(/\D/g, '');
+                      value = value
+                        .replace(/^(\d{2})(\d)/, '$1.$2')
+                        .replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3')
+                        .replace(/\.(\d{3})(\d)/, '.$1/$2')
+                        .replace(/(\d{4})(\d)/, '$1-$2')
+                        .slice(0, 18);
+                      e.target.value = value;
+                      setValue('cnpj', value);
+                    }}
                   />
                 </div>
               </div>
             )}
 
-            {/* Etapa 3 - Configurações e Imagens */}
+            {/* Etapa 3 */}
             {step === 3 && (
               <div className="space-y-6">
                 <div>
@@ -326,7 +338,6 @@ export function RestaurantRegistration() {
                     Imagens do Restaurante
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Logo */}
                     <div>
                       <Label>Logo</Label>
                       <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center hover:border-orange-500">
@@ -349,7 +360,6 @@ export function RestaurantRegistration() {
                       </div>
                     </div>
 
-                    {/* Capa */}
                     <div>
                       <Label>Imagem de Capa</Label>
                       <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center hover:border-orange-500">
@@ -376,19 +386,34 @@ export function RestaurantRegistration() {
               </div>
             )}
 
-            {/* Botões de Navegação */}
+            {/* Navegação */}
             <div className="flex justify-between pt-6">
-              <Button type="button" variant="outline" onClick={prevStep} disabled={step === 1}>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={prevStep}
+                disabled={step === 1 || isSubmitting}
+              >
                 Anterior
               </Button>
 
               {step < 3 ? (
-                <Button type="button" onClick={nextStep} className="bg-orange-500 hover:bg-orange-600">
+                <Button
+                  type="button"
+                  onClick={nextStep}
+                  className="bg-orange-500 hover:bg-orange-600"
+                  disabled={isSubmitting}
+                >
                   Próximo
                 </Button>
               ) : (
-                <Button type="submit" className="bg-orange-500 hover:bg-orange-600">
-                  Finalizar Cadastro
+                <Button
+                  type="button"
+                  className="bg-orange-500 hover:bg-orange-600"
+                  onClick={() => handleSubmit(onSubmit)()}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Enviando...' : 'Finalizar Cadastro'}
                 </Button>
               )}
             </div>

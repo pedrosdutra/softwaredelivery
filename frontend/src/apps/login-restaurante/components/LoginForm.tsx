@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
-import { Separator } from './ui/separator';
-import { toast } from 'sonner';
-import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { Separator } from "./ui/separator";
+import { toast } from "sonner";
+import { Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface LoginFormData {
   email: string;
@@ -29,21 +35,41 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
     formState: { errors },
   } = useForm<LoginFormData>({
     defaultValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
   });
 
   const onSubmit = async (data: LoginFormData) => {
     setIsLoading(true);
 
-    // Simula login de API
-    setTimeout(() => {
-      console.log('Dados de login:', data);
-      toast.success('Login realizado com sucesso!');
-      setIsLoading(false);
+    try {
+      const response = await fetch("http://localhost:3001/api/restaurantes/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: data.email,
+          senha: data.password, // importante: o backend espera "senha"
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Erro ao realizar login.");
+      }
+
+      // Salva restaurante logado localmente
+      localStorage.setItem("restaurante", JSON.stringify(result.restaurante));
+
+      toast.success("✅ Login realizado com sucesso!");
       navigate("/menu-restaurante");
-    }, 1500);
+    } catch (error: any) {
+      console.error("❌ Erro no login:", error);
+      toast.error(error.message || "Falha ao realizar login.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -72,11 +98,11 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
                 type="email"
                 placeholder="seu@email.com"
                 disabled={isLoading}
-                {...register('email', {
-                  required: 'E-mail é obrigatório',
+                {...register("email", {
+                  required: "E-mail é obrigatório",
                   pattern: {
                     value: /\S+@\S+\.\S+/,
-                    message: 'E-mail inválido',
+                    message: "E-mail inválido",
                   },
                 })}
               />
@@ -94,15 +120,15 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
               <div className="relative">
                 <Input
                   id="password"
-                  type={showPassword ? 'text' : 'password'}
+                  type={showPassword ? "text" : "password"}
                   placeholder="Digite sua senha"
                   disabled={isLoading}
                   className="pr-10"
-                  {...register('password', {
-                    required: 'Senha é obrigatória',
+                  {...register("password", {
+                    required: "Senha é obrigatória",
                     minLength: {
                       value: 6,
-                      message: 'A senha deve ter pelo menos 6 caracteres',
+                      message: "A senha deve ter pelo menos 6 caracteres",
                     },
                   })}
                 />
@@ -185,8 +211,8 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
                   className="flex-1"
                   onClick={() =>
                     window.open(
-                      'https://wa.me/5581994990254?text=Preciso%20de%20ajuda',
-                      '_blank'
+                      "https://wa.me/5581994990254?text=Preciso%20de%20ajuda%20no%20Foodly%20(Restaurante)",
+                      "_blank"
                     )
                   }
                 >
