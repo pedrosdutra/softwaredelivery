@@ -1,9 +1,6 @@
 CREATE DATABASE IF NOT EXISTS foodlydb;
 USE foodlydb;
 
--- =========================================================
--- 🧱 Estrutura da Tabela de Usuários
--- =========================================================
 CREATE TABLE IF NOT EXISTS usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
   nome VARCHAR(100) NOT NULL,
