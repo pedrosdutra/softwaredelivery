@@ -3,9 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 import { EditProfileSheet } from './EditProfileSheet';
-import { SupportSheet } from './SupportSheet';
 import { OrderReportSheet } from './OrderReportSheet';
 import { User, Mail, Phone, MapPin, Edit, Headphones, FileText, ChevronRight, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export interface UserData {
   name: string;
@@ -27,7 +27,7 @@ export function UserProfile() {
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
   const [isOrderReportOpen, setIsOrderReportOpen] = useState(false);
-
+  const navigate = useNavigate();
   const handleUpdateProfile = (newData: UserData) => {
     setUserData(newData);
     setIsEditOpen(false);
@@ -98,7 +98,7 @@ export function UserProfile() {
       <div className="space-y-4">
         <Card 
           className="border-orange-200 cursor-pointer transition-colors hover:bg-orange-50"
-          onClick={() => window.open('https://premium.foodly.com', '_blank')}
+          onClick={() => navigate("/userpremium")}
         >
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -125,7 +125,7 @@ export function UserProfile() {
 
         <Card 
           className="border-orange-200 cursor-pointer transition-colors hover:bg-orange-50"
-          onClick={() => setIsSupportOpen(true)}
+          onClick={() => navigate("/suporte")}
         >
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -173,11 +173,6 @@ export function UserProfile() {
         onOpenChange={setIsEditOpen}
         userData={userData}
         onUpdateProfile={handleUpdateProfile}
-      />
-
-      <SupportSheet
-        isOpen={isSupportOpen}
-        onOpenChange={setIsSupportOpen}
       />
 
       <OrderReportSheet

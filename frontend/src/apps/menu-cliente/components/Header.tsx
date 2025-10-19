@@ -9,7 +9,6 @@ import { useCart } from "../contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import foodlyLogo from "../../assets/SegundaLogodoProjeto.png";
-import { title } from "process";
 
 export function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -219,7 +218,7 @@ export function Header() {
             )}
           </Button>
           
-          <Button variant="ghost" size="icon" className="hidden md:flex" onClick={() => navigate("/perfil")}>
+          <Button variant="ghost" size="icon" className="hidden md:flex cursor-pointer" onClick={() => navigate("/perfil")}>
             <User className="h-5 w-5" />
           </Button>
 

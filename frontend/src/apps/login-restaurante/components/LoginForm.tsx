@@ -5,7 +5,6 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Separator } from './ui/separator';
-import { Checkbox } from './ui/checkbox';
 import { toast } from 'sonner';
 import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +12,6 @@ import { useNavigate } from 'react-router-dom';
 interface LoginFormData {
   email: string;
   password: string;
-  rememberMe: boolean;
 }
 
 interface LoginFormProps {
@@ -29,19 +27,22 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
-    watch,
-  } = useForm<LoginFormData>();
+  } = useForm<LoginFormData>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
 
   const onSubmit = async (data: LoginFormData) => {
     setIsLoading(true);
-    
-    // Simular chamada de API
+
+    // Simula login de API
     setTimeout(() => {
       console.log('Dados de login:', data);
       toast.success('Login realizado com sucesso!');
       setIsLoading(false);
-      // Aqui você redirecionaria para o dashboard do restaurante
+      navigate("/menu-restaurante");
     }, 1500);
   };
 
@@ -69,15 +70,15 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
               <Input
                 id="email"
                 type="email"
+                placeholder="seu@email.com"
+                disabled={isLoading}
                 {...register('email', {
                   required: 'E-mail é obrigatório',
                   pattern: {
                     value: /\S+@\S+\.\S+/,
-                    message: 'E-mail inválido'
-                  }
+                    message: 'E-mail inválido',
+                  },
                 })}
-                placeholder="seu@email.com"
-                disabled={isLoading}
               />
               {errors.email && (
                 <p className="text-sm text-red-500">{errors.email.message}</p>
@@ -94,12 +95,16 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
                 <Input
                   id="password"
                   type={showPassword ? 'text' : 'password'}
-                  {...register('password', {
-                    required: 'Senha é obrigatória',
-                  })}
                   placeholder="Digite sua senha"
                   disabled={isLoading}
                   className="pr-10"
+                  {...register('password', {
+                    required: 'Senha é obrigatória',
+                    minLength: {
+                      value: 6,
+                      message: 'A senha deve ter pelo menos 6 caracteres',
+                    },
+                  })}
                 />
                 <button
                   type="button"
@@ -107,11 +112,7 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                   disabled={isLoading}
                 >
-                  {showPassword ? (
-                    <EyeOff className="w-4 h-4" />
-                  ) : (
-                    <Eye className="w-4 h-4" />
-                  )}
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
               {errors.password && (
@@ -119,10 +120,8 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
               )}
             </div>
 
-            {/* Remember Me & Forgot Password */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-2">
-              </div>
+            {/* Forgot Password */}
+            <div className="text-right">
               <button
                 type="button"
                 onClick={() => navigate("/suporte")}
@@ -145,7 +144,7 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
                   Entrando...
                 </div>
               ) : (
-                <div className="flex items-center gap-2" onClick={() => navigate("/menu-restaurante")}>
+                <div className="flex items-center gap-2">
                   Entrar
                   <ArrowRight className="w-4 h-4" />
                 </div>
@@ -157,9 +156,7 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
 
           {/* Register Link */}
           <div className="text-center space-y-4">
-            <p className="text-sm text-gray-600">
-              Ainda não tem uma conta?
-            </p>
+            <p className="text-sm text-gray-600">Ainda não tem uma conta?</p>
             <Button
               variant="outline"
               onClick={onNavigateToRegister}
@@ -177,16 +174,21 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
         <Card>
           <CardContent className="pt-6">
             <div className="text-center space-y-3">
-              <h3 className="text-orange-500">Precisa de Ajuda?</h3>
+              <h3 className="text-orange-500 font-semibold">Precisa de Ajuda?</h3>
               <p className="text-sm text-gray-600">
                 Nossa equipe está pronta para te ajudar com qualquer dúvida sobre o cadastro ou uso da plataforma.
               </p>
               <div className="flex flex-col sm:flex-row gap-2 pt-2">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   className="flex-1"
-                  onClick={() => window.open('https://wa.me/5581994990254?text=Preciso%20de%20ajuda', '_blank')}
+                  onClick={() =>
+                    window.open(
+                      'https://wa.me/5581994990254?text=Preciso%20de%20ajuda',
+                      '_blank'
+                    )
+                  }
                 >
                   WhatsApp Suporte
                 </Button>

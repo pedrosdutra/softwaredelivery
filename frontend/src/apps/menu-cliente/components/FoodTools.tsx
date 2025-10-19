@@ -1,17 +1,10 @@
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Heart, Shuffle, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function FoodTools() {
-  const handleParDeComidaClick = () => {
-    // Aqui seria redirecionado para o site Par de Comida
-    window.open('#', '_blank');
-  };
-
-  const handleComidaAleatoriaClick = () => {
-    // Aqui seria redirecionado para a ferramenta de comida aleatória
-    window.open('#', '_blank');
-  };
+  const navigate = useNavigate();
 
   return (
     <section className="py-16 bg-gradient-to-b from-background to-muted/30">
@@ -48,8 +41,8 @@ export function FoodTools() {
                 Com essa ferramenta iremos fazer você e a pessoa junto a voce escolher a comida ideal para ambos.
               </p>
               <Button 
-                onClick={handleParDeComidaClick}
-                className="w-full group/btn"
+                onClick={() => navigate("/par-de-comida")}
+                className="w-full group/btn cursor-pointer"
                 size="lg"
               >
                 Descobrir Juntos
@@ -80,9 +73,9 @@ export function FoodTools() {
                 Deixe a sorte decidir e descubra novos sabores incríveis!
               </p>
               <Button 
-                onClick={handleComidaAleatoriaClick}
+                onClick={() => navigate("/comida-aleatoria")}
                 variant="outline"
-                className="w-full group/btn border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                className="w-full group/btn border-primary text-primary hover:bg-primary hover:text-primary-foreground cursor-pointer"
                 size="lg"
               >
                 Surpreenda-me

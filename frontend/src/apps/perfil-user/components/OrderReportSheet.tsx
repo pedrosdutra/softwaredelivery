@@ -29,7 +29,7 @@ export function OrderReportSheet({ isOpen, onOpenChange }: OrderReportSheetProps
       date: '2024-09-25',
       restaurant: 'Burger King',
       items: ['Whopper', 'Batata Frita', 'Coca-Cola'],
-      total: 35.90,
+      total: 35.9,
       status: 'delivered',
       deliveryTime: '35 min',
       address: 'Rua das Flores, 123'
@@ -39,7 +39,7 @@ export function OrderReportSheet({ isOpen, onOpenChange }: OrderReportSheetProps
       date: '2024-09-24',
       restaurant: 'Pizza Hut',
       items: ['Pizza Margherita G', 'Refrigerante 2L'],
-      total: 52.90,
+      total: 52.9,
       status: 'delivered',
       deliveryTime: '45 min',
       address: 'Rua das Flores, 123'
@@ -49,7 +49,7 @@ export function OrderReportSheet({ isOpen, onOpenChange }: OrderReportSheetProps
       date: '2024-09-23',
       restaurant: 'Subway',
       items: ['Sanduíche Italian BMT', 'Cookies', 'Suco'],
-      total: 28.90,
+      total: 28.9,
       status: 'delivered',
       deliveryTime: '25 min',
       address: 'Rua das Flores, 123'
@@ -57,9 +57,9 @@ export function OrderReportSheet({ isOpen, onOpenChange }: OrderReportSheetProps
     {
       id: '004',
       date: '2024-09-22',
-      restaurant: 'McDonald\'s',
+      restaurant: "McDonald's",
       items: ['Big Mac', 'McFritas', 'Milk Shake'],
-      total: 32.90,
+      total: 32.9,
       status: 'cancelled',
       deliveryTime: '-',
       address: 'Rua das Flores, 123'
@@ -93,112 +93,93 @@ export function OrderReportSheet({ isOpen, onOpenChange }: OrderReportSheetProps
   };
 
   const totalSpent = orders
-    .filter(order => order.status === 'delivered')
+    .filter((order) => order.status === 'delivered')
     .reduce((sum, order) => sum + order.total, 0);
 
   const totalOrders = orders.length;
-  const deliveredOrders = orders.filter(order => order.status === 'delivered').length;
+  const deliveredOrders = orders.filter((order) => order.status === 'delivered').length;
 
   return (
     <Sheet open={isOpen} onOpenChange={onOpenChange}>
-      <SheetContent className="w-[600px] sm:w-[900px]">
-        <SheetHeader>
-          <SheetTitle>Relatório de Pedidos</SheetTitle>
-          <SheetDescription>
-            Visualize seu histórico completo de pedidos e estatísticas.
-          </SheetDescription>
-        </SheetHeader>
+      <SheetContent className="w-[600px] sm:w-[900px] p-0 overflow-hidden rounded-l-2xl shadow-2xl">
+        {/* Header fixo com gradiente */}
+        <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-5 border-b">
+          <SheetHeader>
+            <SheetTitle className="text-2xl font-semibold">📦 Relatório de Pedidos</SheetTitle>
+            <SheetDescription className="text-orange-100 text-sm">
+              Veja seu histórico completo e estatísticas de entrega.
+            </SheetDescription>
+          </SheetHeader>
+        </div>
 
-        <div className="space-y-6 mt-6">
-          {/* Estatísticas */}
-          <div className="grid grid-cols-3 gap-4">
-            <Card className="border-orange-200">
-              <CardContent className="p-4 text-center">
-                <Package className="w-6 h-6 text-orange-600 mx-auto mb-2" />
-                <p className="text-2xl font-bold">{totalOrders}</p>
-                <p className="text-sm text-muted-foreground">Total de Pedidos</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-200">
-              <CardContent className="p-4 text-center">
-                <CalendarDays className="w-6 h-6 text-green-600 mx-auto mb-2" />
-                <p className="text-2xl font-bold">{deliveredOrders}</p>
-                <p className="text-sm text-muted-foreground">Entregues</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-200">
-              <CardContent className="p-4 text-center">
-                <DollarSign className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                <p className="text-2xl font-bold">R$ {totalSpent.toFixed(2)}</p>
-                <p className="text-sm text-muted-foreground">Total Gasto</p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Lista de Pedidos */}
+        {/* Conteúdo principal com scroll interno */}
+        <ScrollArea className="h-[calc(100vh-90px)] p-6 space-y-8 bg-gray-50">
+          {/* Lista de pedidos */}
           <div>
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-medium">Histórico de Pedidos</h3>
-              <Button 
-                variant="outline" 
+              <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+                <Clock className="w-5 h-5 text-orange-500" />
+                Histórico de Pedidos
+              </h3>
+              <Button
+                variant="outline"
                 size="sm"
-                className="flex items-center gap-2 border-orange-300 text-orange-600 hover:bg-orange-50"
+                className="flex items-center gap-2 border-orange-300 text-orange-600 hover:bg-orange-100 hover:text-orange-700 transition-all"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-4 h-4 animate-bounce-slow" />
                 Exportar
               </Button>
             </div>
 
-            <ScrollArea className="h-[400px]">
-              <div className="space-y-4">
-                {orders.map((order) => (
-                  <Card key={order.id} className="border-orange-200">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-center justify-between">
-                        <CardTitle className="text-base">{order.restaurant}</CardTitle>
-                        <Badge className={getStatusColor(order.status)}>
-                          {getStatusText(order.status)}
-                        </Badge>
-                      </div>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <CalendarDays className="w-4 h-4" />
-                          {new Date(order.date).toLocaleDateString('pt-BR')}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          {order.deliveryTime}
-                        </span>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <div className="space-y-3">
-                        <div>
-                          <p className="text-sm font-medium mb-1">Itens:</p>
-                          <p className="text-sm text-muted-foreground">
-                            {order.items.join(', ')}
-                          </p>
-                        </div>
-                        
-                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                          <MapPin className="w-4 h-4" />
-                          {order.address}
-                        </div>
-                        
-                        <div className="flex justify-between items-center pt-2 border-t">
-                          <span className="text-sm text-muted-foreground">Total:</span>
-                          <span className="font-bold text-lg">R$ {order.total.toFixed(2)}</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </ScrollArea>
+            <div className="space-y-4">
+              {orders.map((order) => (
+                <Card
+                  key={order.id}
+                  className="border border-gray-200 hover:shadow-md hover:border-orange-300 transition-all duration-200"
+                >
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-base font-semibold text-gray-800">
+                        {order.restaurant}
+                      </CardTitle>
+                      <Badge className={`${getStatusColor(order.status)} px-2 py-1 rounded-md`}>
+                        {getStatusText(order.status)}
+                      </Badge>
+                    </div>
+                    <div className="flex items-center gap-4 text-sm text-gray-500 mt-1">
+                      <span className="flex items-center gap-1">
+                        <CalendarDays className="w-4 h-4" />
+                        {new Date(order.date).toLocaleDateString('pt-BR')}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-4 h-4" />
+                        {order.deliveryTime}
+                      </span>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-2 space-y-3">
+                    <div>
+                      <p className="text-sm font-medium text-gray-700">Itens:</p>
+                      <p className="text-sm text-gray-500">{order.items.join(', ')}</p>
+                    </div>
+
+                    <div className="flex items-center gap-1 text-sm text-gray-500">
+                      <MapPin className="w-4 h-4 text-orange-500" />
+                      {order.address}
+                    </div>
+
+                    <div className="flex justify-between items-center pt-3 border-t border-gray-100">
+                      <span className="text-sm text-gray-500">Total</span>
+                      <span className="font-semibold text-lg text-orange-600">
+                        R$ {order.total.toFixed(2)}
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollArea>
       </SheetContent>
     </Sheet>
   );

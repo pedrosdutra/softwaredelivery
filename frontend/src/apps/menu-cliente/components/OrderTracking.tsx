@@ -10,7 +10,7 @@ export function OrderTracking() {
       <div className="max-w-md mx-auto px-4 text-center">
         <Button 
           onClick={() => navigate("/rastreamento-pedido")}
-          className="w-full h-12"
+          className="w-full h-12 cursor-pointer"
         >
           Acompanhar Meu Pedido
           <ExternalLink className="h-4 w-4 ml-2" />

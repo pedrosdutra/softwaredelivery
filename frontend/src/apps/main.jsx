@@ -8,8 +8,11 @@ import LoginRestauranteApp from "./login-restaurante/LoginRestauranteApp";
 import MenuClienteApp from "./menu-cliente/MenuClienteApp";
 import MenuRestauranteApp from "./menu-restaurante/MenuRestauranteApp"
 import PerfilUserApp from "./perfil-user/PerfilUserApp"
+import UserPremiumApp from "./userpremium/UserPremiumApp"
 import RastreamentoPedido from "./rastreamento-pedido/RastreamentoPedidoApp"
 import Avaliacao from "./avaliacao/AvaliacaoApp"
+import ParDeComida from "./par-de-comida/ParDeComidaApp"
+import ComidaAleatoria from "./comida-aleatoria/ComidaAleatoriaApp"
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
@@ -25,6 +28,9 @@ createRoot(document.getElementById("root")).render(
         <Route path="/avaliacao" element={<Avaliacao />} />
         <Route path="/menu-restaurante" element={<MenuRestauranteApp />} />
         <Route path="/perfil" element={<PerfilUserApp />} />
+        <Route path="/userpremium" element={<UserPremiumApp />} />
+        <Route path="/par-de-comida" element={<ParDeComida />} />
+        <Route path="/comida-aleatoria" element={<ComidaAleatoria />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
