@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
@@ -8,30 +8,56 @@ import { User, Mail, Phone, MapPin, Edit, Headphones, FileText, ChevronRight, St
 import { useNavigate } from 'react-router-dom';
 
 export interface UserData {
-  name: string;
+  nome: string;
   email: string;
-  phone: string;
-  address: string;
-  photo: string;
+  telefone?: string;
+  endereco?: string;
+  numero?: string;
+  bairro?: string;
+  cidade?: string;
+  photo?: string;
 }
 
 export function UserProfile() {
-  const [userData, setUserData] = useState<UserData>({
-    name: 'João Silva',
-    email: 'joao.silva@email.com',
-    phone: '(11) 99999-9999',
-    address: 'Rua das Flores, 123 - São Paulo, SP',
-    photo: 'https://images.unsplash.com/photo-1585972949678-b7eff107d061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9maWxlJTIwYXZhdGFyJTIwcGxhY2Vob2xkZXJ8ZW58MXx8fHwxNzU4ODI4MjE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-  });
-
+  const [userData, setUserData] = useState<UserData | null>(null);
   const [isEditOpen, setIsEditOpen] = useState(false);
-  const [isSupportOpen, setIsSupportOpen] = useState(false);
   const [isOrderReportOpen, setIsOrderReportOpen] = useState(false);
   const navigate = useNavigate();
+
+  // 🧠 Carrega os dados do usuário logado
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+
+      // Ajusta os nomes conforme o backend MySQL
+      setUserData({
+        nome: user.nome,
+        email: user.email,
+        telefone: user.telefone || "Não informado",
+        endereco: user.endereco || "Endereço não cadastrado",
+        numero: user.numero || "",
+        bairro: user.bairro || "",
+        cidade: user.cidade || "",
+        photo: user.photo || "https://ui-avatars.com/api/?name=" + encodeURIComponent(user.nome),
+      });
+    }
+  }, []);
+
   const handleUpdateProfile = (newData: UserData) => {
     setUserData(newData);
     setIsEditOpen(false);
   };
+
+  if (!userData) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-gray-600">Carregando perfil...</p>
+      </div>
+    );
+  }
+
+  const enderecoCompleto = `${userData.endereco}, ${userData.numero || "s/n"} - ${userData.bairro || ""}, ${userData.cidade || ""}`;
 
   return (
     <div className="max-w-2xl mx-auto p-6 space-y-6">
@@ -39,8 +65,8 @@ export function UserProfile() {
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
             <span>Meu Perfil</span>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               onClick={() => setIsEditOpen(true)}
               className="flex items-center gap-2 border-orange-300 text-orange-600 hover:bg-orange-50"
@@ -50,22 +76,23 @@ export function UserProfile() {
             </Button>
           </CardTitle>
         </CardHeader>
+
         <CardContent className="space-y-6">
-          {/* Foto de Perfil */}
+          {/* Foto e nome */}
           <div className="flex items-center gap-4">
             <Avatar className="w-20 h-20">
-              <AvatarImage src={userData.photo} alt={userData.name} />
+              <AvatarImage src={userData.photo} alt={userData.nome} />
               <AvatarFallback>
                 <User className="w-8 h-8" />
               </AvatarFallback>
             </Avatar>
             <div>
-              <h3 className="text-lg font-medium">{userData.name}</h3>
+              <h3 className="text-lg font-medium">{userData.nome}</h3>
               <p className="text-muted-foreground">Membro desde 2025</p>
             </div>
           </div>
 
-          {/* Informações do Usuário */}
+          {/* Dados do usuário */}
           <div className="space-y-4">
             <div className="flex items-center gap-3 p-3 rounded-lg bg-orange-50 border border-orange-100">
               <Mail className="w-5 h-5 text-orange-600" />
@@ -79,7 +106,7 @@ export function UserProfile() {
               <Phone className="w-5 h-5 text-orange-600" />
               <div>
                 <p className="text-sm text-orange-700">Telefone</p>
-                <p>{userData.phone}</p>
+                <p>{userData.telefone}</p>
               </div>
             </div>
 
@@ -87,16 +114,16 @@ export function UserProfile() {
               <MapPin className="w-5 h-5 text-orange-600" />
               <div>
                 <p className="text-sm text-orange-700">Endereço</p>
-                <p>{userData.address}</p>
+                <p>{enderecoCompleto}</p>
               </div>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Opções Adicionais */}
+      {/* Outras opções */}
       <div className="space-y-4">
-        <Card 
+        <Card
           className="border-orange-200 cursor-pointer transition-colors hover:bg-orange-50"
           onClick={() => navigate("/userpremium")}
         >
@@ -108,7 +135,7 @@ export function UserProfile() {
                 </div>
                 <div>
                   <h3 className="font-medium flex items-center gap-2">
-                    Usuário Premium 
+                    Usuário Premium
                     <span className="text-xs bg-gradient-to-r from-orange-600 to-yellow-600 text-white px-2 py-1 rounded-full">
                       UPGRADE
                     </span>
@@ -123,7 +150,7 @@ export function UserProfile() {
           </CardContent>
         </Card>
 
-        <Card 
+        <Card
           className="border-orange-200 cursor-pointer transition-colors hover:bg-orange-50"
           onClick={() => navigate("/suporte")}
         >
@@ -145,7 +172,7 @@ export function UserProfile() {
           </CardContent>
         </Card>
 
-        <Card 
+        <Card
           className="border-orange-200 cursor-pointer transition-colors hover:bg-orange-50"
           onClick={() => setIsOrderReportOpen(true)}
         >

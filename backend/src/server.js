@@ -1,15 +1,18 @@
 import express from "express";
 import cors from "cors";
-import { db } from "./config/db.js";
+import dotenv from "dotenv";
+import "./config/db.js"; // conecta automaticamente
+import userRoutes from "./routes/userRoutes.js";
+
+dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5173", methods: ["GET", "POST"] }));
 app.use(express.json());
 
-// Teste de conexão
-app.get("/", (req, res) => res.send("API do SoftwareDelivery está rodando!"));
+app.get("/", (req, res) => res.send("API do Foodly está rodando 🍽️"));
 
-// Iniciar servidor
-app.listen(process.env.PORT || 3001, () => {
-  console.log(`Servidor rodando na porta ${process.env.PORT || 3001}`);
-});
+app.use("/api/users", userRoutes);
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`🚀 Servidor rodando na porta ${PORT}`));
