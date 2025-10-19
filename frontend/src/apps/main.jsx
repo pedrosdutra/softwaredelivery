@@ -6,7 +6,10 @@ import Suporte from "./suporte/SuporteApp"
 import LoginApp from "./login/LoginApp";
 import LoginRestauranteApp from "./login-restaurante/LoginRestauranteApp";
 import MenuClienteApp from "./menu-cliente/MenuClienteApp";
+import MenuRestauranteApp from "./menu-restaurante/MenuRestauranteApp"
 import PerfilUserApp from "./perfil-user/PerfilUserApp"
+import RastreamentoPedido from "./rastreamento-pedido/RastreamentoPedidoApp"
+import Avaliacao from "./avaliacao/AvaliacaoApp"
 import "./index.css";
 
 createRoot(document.getElementById("root")).render(
@@ -18,6 +21,9 @@ createRoot(document.getElementById("root")).render(
         <Route path="/login" element={<LoginApp />} />
         <Route path="/login-restaurante" element={<LoginRestauranteApp />} />
         <Route path="/menu" element={<MenuClienteApp />} />
+        <Route path="/rastreamento-pedido" element={<RastreamentoPedido />} />
+        <Route path="/avaliacao" element={<Avaliacao />} />
+        <Route path="/menu-restaurante" element={<MenuRestauranteApp />} />
         <Route path="/perfil" element={<PerfilUserApp />} />
       </Routes>
     </BrowserRouter>

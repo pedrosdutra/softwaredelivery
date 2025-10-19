@@ -1,18 +1,15 @@
 import { Button } from './ui/button';
 import { ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function OrderTracking() {
-  const handleTrackOrders = () => {
-    // Redireciona para site de acompanhamento de pedidos de delivery
-    const trackingUrl = `https://www.foodly.com.br/meus-pedidos`;
-    window.open(trackingUrl, '_blank');
-  };
+  const navigate = useNavigate();
 
   return (
     <section className="py-16 bg-background">
       <div className="max-w-md mx-auto px-4 text-center">
         <Button 
-          onClick={handleTrackOrders}
+          onClick={() => navigate("/rastreamento-pedido")}
           className="w-full h-12"
         >
           Acompanhar Meu Pedido

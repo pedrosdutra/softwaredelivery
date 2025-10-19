@@ -8,6 +8,7 @@ import { Separator } from './ui/separator';
 import { Checkbox } from './ui/checkbox';
 import { toast } from 'sonner';
 import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface LoginFormData {
   email: string;
@@ -20,6 +21,7 @@ interface LoginFormProps {
 }
 
 export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -41,10 +43,6 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
       setIsLoading(false);
       // Aqui você redirecionaria para o dashboard do restaurante
     }, 1500);
-  };
-
-  const handleForgotPassword = () => {
-    toast.info('Instruções de recuperação enviadas para seu e-mail.');
   };
 
   return (
@@ -98,10 +96,6 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
                   type={showPassword ? 'text' : 'password'}
                   {...register('password', {
                     required: 'Senha é obrigatória',
-                    minLength: {
-                      value: 6,
-                      message: 'Senha deve ter pelo menos 6 caracteres'
-                    }
                   })}
                   placeholder="Digite sua senha"
                   disabled={isLoading}
@@ -128,21 +122,10 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
             {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <Checkbox
-                  id="rememberMe"
-                  onCheckedChange={(checked) => setValue('rememberMe', !!checked)}
-                  disabled={isLoading}
-                />
-                <Label
-                  htmlFor="rememberMe"
-                  className="text-sm cursor-pointer"
-                >
-                  Lembrar de mim
-                </Label>
               </div>
               <button
                 type="button"
-                onClick={handleForgotPassword}
+                onClick={() => navigate("/suporte")}
                 className="text-sm text-orange-500 hover:text-orange-600"
                 disabled={isLoading}
               >
@@ -162,7 +145,7 @@ export function LoginForm({ onNavigateToRegister }: LoginFormProps) {
                   Entrando...
                 </div>
               ) : (
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2" onClick={() => navigate("/menu-restaurante")}>
                   Entrar
                   <ArrowRight className="w-4 h-4" />
                 </div>

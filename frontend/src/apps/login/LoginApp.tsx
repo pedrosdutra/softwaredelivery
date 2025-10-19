@@ -52,7 +52,7 @@ export default function LoginApp() {
     const validDomains = [
       '@gmail.com', '@hotmail.com', '@outlook.com', '@yahoo.com',
       '@icloud.com', '@live.com', '@msn.com', '@uol.com.br',
-      '@bol.com.br', '@terra.com.br', '@ig.com.br', '@unicap.br', '@admin.com'
+      '@bol.com.br', '@terra.com.br', '@ig.com.br', '@unicap.br', '@admin.com', '@foodly.com'
     ];
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) return false;
