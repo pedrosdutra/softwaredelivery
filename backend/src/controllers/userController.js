@@ -6,7 +6,30 @@ import { db } from "../config/db.js";
 // ============================
 export const registerUser = async (req, res) => {
   try {
-    const { nome, email, telefone, senha, cep, endereco, numero, complemento, bairro, cidade } = req.body;
+    // Aceita tanto "senha" quanto "password"
+    const {
+      nome,
+      email,
+      telefone,
+      senha,
+      password,
+      cep,
+      endereco,
+      numero,
+      complemento,
+      bairro,
+      cidade,
+    } = req.body;
+
+    const userPassword = senha || password;
+
+    if (!nome || !email || !userPassword) {
+      return res
+        .status(400)
+        .json({ message: "Nome, email e senha são obrigatórios." });
+    }
+
+    console.log("📥 Dados recebidos no registro:", req.body);
 
     // Verifica se o email já existe
     const [existingUser] = await db.query("SELECT * FROM usuarios WHERE email = ?", [email]);
@@ -15,13 +38,13 @@ export const registerUser = async (req, res) => {
     }
 
     // Criptografa a senha
-    const hashedPassword = await bcrypt.hash(senha, 10);
+    const senhaHash = await bcrypt.hash(userPassword, 10);
 
     // Insere no banco
     await db.query(
       `INSERT INTO usuarios (nome, email, telefone, senha, cep, endereco, numero, complemento, bairro, cidade)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-      [nome, email, telefone, hashedPassword, cep, endereco, numero, complemento, bairro, cidade]
+      [nome, email, telefone, senhaHash, cep, endereco, numero, complemento, bairro, cidade]
     );
 
     res.status(201).json({ message: "Usuário cadastrado com sucesso!" });

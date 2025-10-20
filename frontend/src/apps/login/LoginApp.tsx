@@ -116,13 +116,25 @@ export default function LoginApp() {
   };
 
   // === Cadastro ===
+  // === Cadastro ===
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await fetch("http://localhost:3001/api/users/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          nome: formData.name,
+          email: formData.email,
+          telefone: formData.phone,
+          senha: formData.password,
+          cep: formData.cep,
+          endereco: formData.endereco,
+          numero: formData.numero,
+          complemento: formData.complemento,
+          bairro: formData.bairro,
+          cidade: formData.cidade,
+        }),
       });
 
       const data = await response.json();
