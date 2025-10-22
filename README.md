@@ -30,9 +30,9 @@
 
 
 ## 💼 Cargos:
-- Devs Back-end: `Breno / Ivo / Diogo` - Java / Spring  
-- Devs Front-end: `Salomão` - Javascript / HTML / Tailwind  
-- Devs Fullstack: `Pedro / Nedson / Alvin / Salomão` - Java / Spring / Javascript / HTML / Tailwind  
+- Devs Back-end: `Breno / Ivo / Diogo`
+- Devs Front-end: `Salomão`
+- Devs Fullstack: `Pedro / Nedson / Alvin / Salomão`
 - Design: `Pedro / Salomão`
 - Documentação: `Salomão`
 
