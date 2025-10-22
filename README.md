@@ -71,6 +71,7 @@
 
 ## Outros links
 <!-- Para deixar o Readme mais clean -->
+[Readme 2](/assets%20do%20README/README_2.md)
 
 ## 🐞 Bug Tracking (GitHub Issues)
 [Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
