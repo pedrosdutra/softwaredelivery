@@ -73,6 +73,21 @@
 <!-- Para deixar o Readme mais clean -->
 [Readme 2](/assets%20do%20README/README_2.md)
 
+### 💻 Pair Programming
+
+Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*, alternando os papéis de **Driver** (quem codifica) e **Navigator** (quem orienta e revisa). Essa prática ajudou a melhorar a qualidade do código, promover o aprendizado conjunto e facilitar a resolução de problemas.
+
+| Data | Funcionalidade | Driver | Navigator | Duração |
+|------|----------------|---------|------------|----------|
+| 12/10/2025 | Implementação do banco de dados | Diogo | Breno | 2h |
+| 21/09/2025 | Desenvolvimento do frontend | Pedro | Ivo | 4h |
+| 21/09/2025 | Implementação do módulo de bug tracker | Salomão | Nedson | 1h30 |
+
+> 💬 As sessões abrangeram diferentes etapas do projeto.  
+> - **Banco de dados:** criação das tabelas principais, definição dos relacionamentos e configuração da conexão com o backend.  
+> - **Frontend:** estruturação das telas principais, integração com a API e ajustes visuais responsivos.  
+> - **Bug Tracker:** correção e registro de erros, aprimoramento do fluxo de feedback e melhorias na rastreabilidade de falhas.
+
 ## 🐞 Bug Tracking (GitHub Issues)
 [Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
 
