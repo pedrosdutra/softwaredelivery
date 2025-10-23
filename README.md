@@ -92,7 +92,7 @@ Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*,
 [Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
 
 ## Diagrama de Atividades Atualizado
-<img src="assets do README/Diagrama Foodly (3).jpeg">
+<img src="assets do README/Diagrama Foodly.jpeg">
 <img src="assets do README/Diagrama Foodly (2).jpeg">
 <img src="assets do README/Diagrama Foodly (1).jpeg">
 
