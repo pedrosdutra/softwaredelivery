@@ -77,9 +77,9 @@
 [Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
 
 ## Diagrama de Atividades Atualizado
-<img src="Diagrama Foodly (3).jpeg">
-<img src="Diagrama Foodly (2).jpeg">
-<img src="Diagrama Foodly (1).jpeg">
+<img src="assets do README/Diagrama Foodly (3).jpeg">
+<img src="assets do README/Diagrama Foodly (2).jpeg">
+<img src="assets do README/Diagrama Foodly (1).jpeg">
 
 <!-- DEPOIS INCLUIR: --
 ## Como usar?
