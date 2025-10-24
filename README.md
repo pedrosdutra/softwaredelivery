@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="#"><img src="assets do README/Segunda Logo do Projeto.png" alt="img" width="200"></a>
+  <a href="#"><img src="assets do README/Segunda Logo do Projeto.png" alt="Logo Foodly" width="200"></a>
   <br>
   Foodly
   <br>
@@ -36,6 +36,14 @@
 - Design: `Pedro / Salomão`
 - Documentação: `Salomão`
 
+## 🔍️ Sumário:
+
+[Evidencias de Pair Programming](#-pair-programming) <br><br>
+[Bug Tracking Atualizado](#-bug-tracking-github-issues) <br><br>
+[Diagrama de Atividades Atualizado](#diagrama-de-atividades-atualizado) <br><br>
+[Vídeo explicando as Pastas](#vídeo-explicando-as-pastas) <br>
+
+
 <!--## Como instalar?
     > mysql e node e npm...
     
@@ -69,10 +77,6 @@
 
 12. Recurso para recomendar um restaurante/comida aleatória com melhor avaliação
 
-## Outros links
-<!-- Para deixar o Readme mais clean -->
-[Readme 2](/assets%20do%20README/README_2.md)
-
 ### 💻 Pair Programming
 
 Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*, alternando os papéis de **Driver** (quem codifica) e **Navigator** (quem orienta e revisa). Essa prática ajudou a melhorar a qualidade do código, promover o aprendizado conjunto e facilitar a resolução de problemas.
@@ -95,6 +99,13 @@ Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*,
 <img src="assets do README/Diagrama Foodly.jpeg">
 <img src="assets do README/Diagrama Foodly (2).jpeg">
 <img src="assets do README/Diagrama Foodly (1).jpeg">
+
+## Vídeo explicando as Pastas
+[Video](https://drive.google.com/file/d/1dry2-Un5sebZLeBVe6CXrkJKNOi1ieNt/view)
+
+## Outros links
+<!-- Para deixar o Readme mais clean -->
+[Readme 2](/assets%20do%20README/README_2.md)
 
 <!-- DEPOIS INCLUIR: --
 ## Como usar?
