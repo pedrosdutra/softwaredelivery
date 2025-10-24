@@ -96,9 +96,14 @@ Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*,
 [Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
 
 ## Diagrama de Atividades Atualizado
+
+[Link para o Diagrama](https://1drv.ms/f/c/b1599c0a0d00128c/EoB-_Crxb79DuTUHmsImx2IBdn8dWgVuMBFy8HQ7jwHrGA?e=NbbD9a)
+<!--
 <img src="assets do README/Diagrama-Foodly1.jpeg">
 <img src="assets do README/Diagrama-Foodly2.jpeg">
 <img src="assets do README/Diagrama-Foodly3.jpeg">
+-->
+
 
 ## Vídeo explicando as Pastas
 [Video](https://drive.google.com/file/d/1dry2-Un5sebZLeBVe6CXrkJKNOi1ieNt/view)
