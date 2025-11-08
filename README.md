@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="#"><img src="assets do README/Segunda Logo do Projeto.png" alt="Logo Foodly" width="200"></a>
+  <a href="#"><img src="README/Segunda Logo do Projeto.png" alt="Logo Foodly" width="200"></a>
   <br>
   Foodly
   <br>
@@ -99,9 +99,9 @@ Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*,
 
 [Link para o Diagrama](https://1drv.ms/f/c/b1599c0a0d00128c/EoB-_Crxb79DuTUHmsImx2IBdn8dWgVuMBFy8HQ7jwHrGA?e=NbbD9a)
 <!--
-<img src="assets do README/Diagrama-Foodly1.jpeg">
-<img src="assets do README/Diagrama-Foodly2.jpeg">
-<img src="assets do README/Diagrama-Foodly3.jpeg">
+<img src="README/Diagrama-Foodly1.jpeg">
+<img src="README/Diagrama-Foodly2.jpeg">
+<img src="README/Diagrama-Foodly3.jpeg">
 -->
 
 
