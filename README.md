@@ -20,35 +20,35 @@
 <div align="center">
 <br />
 
-[![Project license](https://img.shields.io/github/license/sal0minh0/softwaredelivery.svg?style=flat-square)](LICENSE)
+[![Project license](https://img.shields.io/github/license/pedrosdutra/softwaredelivery.svg?style=flat-square)](LICENSE)
 
-[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/sal0minh0/softwaredelivery/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[![code with love by sal0minh0](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-sal0minh0-ff1414.svg?style=flat-square)](https://github.com/sal0minh0)
+[![Pull Requests welcome](https://img.shields.io/badge/PRs-Welcome-ff69b4.svg?style=flat-square)](https://github.com/sal0minh0/softwaredelivery/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[![code with love by Team Foodly](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-Team_Foodly-ff1414.svg?style=flat-square)](https://github.com/pedrosdutra/softwaredelivery)
 
 </div>
 
 <details open="open">
-<summary>Table of Contents</summary>
+<summary>Sumário</summary>
 
-- [About](#about)
-  - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Support](#support)
-- [Project assistance](#project-assistance)
-- [Contributing](#contributing)
-- [Authors & contributors](#authors--contributors)
-- [Security](#security)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+- [Sobre](#sobre)
+  - [Feito Com](#feito-com)
+- [Começando](#começando)
+  - [Prerequisitos](#prerequisitos)
+  - [Instalação](#instalação)
+- [Como usar](#como-usar)
+- [Suporte](#suporte)
+- [Como Ajudar o Projeto](#como-ajudar-o-projeto)
+- [Como Contribuir](#como-contribuir)
+- [Autores do Projeto](#autores-do-projeto)
+- [Segurança](#segurança)
+- [Licença](#licença)
+- [Conquistas](#conquistas)
 
 </details>
 
 ---
 
-## About
+## Sobre
 
 <table><tr><td>
 
@@ -74,30 +74,36 @@
 
 </td></tr></table>
 
-### Built With
+### Feito Com
 
 > **[?]**
 > Please provide the technologies that are used in the project.
 
-## Getting Started
+## Começando
 
-### Prerequisites
+### Prerequisitos
 
 > **[?]**
 > What are the project requirements/dependencies?
 
-### Installation
+### Instalação
+
+<!-- --- EXEMPLO - EDITAR --- -->
 
 > **[?]**
-> Describe how to install and get started with the project.
+> 1. **Install Dependencies**: `npm install or yarn`
+>2. **Create containers**: `docker-compose up -d`
+>3. **Environment variables**: Copy `.env.example` to a new `.env.local`
+>4. **Database Setup**: `npx prisma migrate dev --name init`
+>5. **Start Developing**: `npm run start:dev (api) & npm run dev (frontend)`
 
-## Usage
+## Como usar
 
 > **[?]**
 > How does one go about using it?
 > Provide various use cases and code examples here.
 
-## Support
+## Suporte
 
 > **[?]**
 > Provide additional ways to contact the project maintainer/maintainers.
@@ -107,7 +113,7 @@ Reach out to the maintainer at one of the following places:
 - [GitHub issues](https://github.com/sal0minh0/softwaredelivery/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
 - Contact options listed on [this GitHub profile](https://github.com/sal0minh0)
 
-## Project assistance
+## Como Ajudar o Projeto
 
 If you want to say **thank you** or/and support active development of Foodly:
 
@@ -117,60 +123,47 @@ If you want to say **thank you** or/and support active development of Foodly:
 
 Together, we can make Foodly **better**!
 
-## Contributing
+## Como Contribuir
 
 First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
 
 
 Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you for being involved!
 
-## Authors & contributors
+<!-- --- EXEMPLO - EDITAR --- -->
+
+1. **Clone project**: `git clone https://github.com/Fernanda-Kipper/Readme-Templates.git`
+2. **Create feature/branch**: `git checkout -b feature/NAME`
+
+## Autores do Projeto
 
 The original setup of this repository is by [Salomão de Moraes](https://github.com/sal0minh0).
 
 For a full list of all authors and contributors, see [the contributors page](https://github.com/sal0minh0/softwaredelivery/contributors).
 
-## Security
+## Segurança
 
 Foodly follows good practices of security, but 100% security cannot be assured.
 Foodly is provided **"as is"** without any **warranty**. Use at your own risk.
 
 _For more information and to report security issues, please refer to our [security documentation](docs/SECURITY.md)._
 
-## License
+## Licença
 
 This project is licensed under the **MIT license**.
 
 See [LICENSE](LICENSE) for more information.
 
-## Acknowledgements
+Modelo base Remy Sharp:
+- [MIT](https://rem.mit-license.org)
+
+## Conquistas
 
 > **[?]**
 > If your work was funded by any organization or institution, acknowledge their support here.
 > In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.
 
-<!-- MODELO 2 -->
-
-## Getting Started
-
-1. **Install Dependencies**: `npm install or yarn`
-2. **Create containers**: `docker-compose up -d`
-3. **Environment variables**: Copy `.env.example` to a new `.env.local`
-4. **Database Setup**: `npx prisma migrate dev --name init`
-5. **Start Developing**: `npm run start:dev (api) & npm run dev (frontend)`
-
-## Contribute
-
-1. **Clone project**: `git clone https://github.com/Fernanda-Kipper/Readme-Templates.git`
-2. **Create feature/branch**: `git checkout -b feature/NAME`
-
-## License
-
-This software is available under the following licenses:
-
-- [MIT](https://rem.mit-license.org)
-
-<!-- ANEXAR OS ESCRITOS ACIMA NESSE CÓDIGO ABAIXO -->
+<!-- AJUDAR O ABAIXO COM O CODIGO MARKDOWN ACIMA -->
 
 <!--<h1 align="center">
   <a href="#"><img src="README/Segunda Logo do Projeto.png" alt="Logo Foodly" width="200"></a>
