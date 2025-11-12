@@ -1,21 +1,20 @@
 <h1 align="center">
-  <a href="https://github.com/sal0minh0/softwaredelivery">
-    <!-- Please provide path to your logo here -->
-    <img src="docs/images/logo.svg" alt="Logo" width="100" height="100">
+  <a href="https://github.com/pedrosdutra/softwaredelivery">
+    <img src="docs/images/logo.png" alt="Logo Foodly" width="100" height="100">
   </a>
 </h1>
 
 <div align="center">
   Foodly
   <br />
-  <a href="#about"><strong>Explore the screenshots »</strong></a>
+  <a href="#about"><strong>Screenshots</strong></a>
   <br />
   <br />
-  <a href="https://github.com/sal0minh0/softwaredelivery/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
+  <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Reportar Bugs</a>
   ·
-  <a href="https://github.com/sal0minh0/softwaredelivery/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
-  .
-  <a href="https://github.com/sal0minh0/softwaredelivery/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+">Ask a Question</a>
+  <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Pedir novas Features</a>
+  ·
+  <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+">Perguntar</a>
 </div>
 
 <div align="center">
