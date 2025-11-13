@@ -9,16 +9,21 @@
   <br />
   <a href="#about"><strong>Screenshots</strong></a>
   <br />
-  <br />
   <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Reportar Bugs</a>
   ·
   <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Pedir novas Features</a>
   ·
   <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+">Perguntar</a>
 </div>
+<br/ >
+
+<p align="center">
+  <a href="#-colaboradores-">
+    <img src="https://img.shields.io/badge/👫_7_-Colaboradores-orange" alt="Colaboradores">
+    </a>
+  </p>
 
 <div align="center">
-<br />
 
 [![Project license](https://img.shields.io/github/license/pedrosdutra/softwaredelivery.svg?style=flat-square)](LICENSE)
 
@@ -33,7 +38,7 @@
 - [Sobre](#sobre)
   - [Feito Com](#feito-com)
 - [Começando](#começando)
-  - [Prerequisitos](#prerequisitos)
+  - [Pré-requisitos](#prerequisitos)
   - [Instalação](#instalação)
 - [Como usar](#como-usar)
 - [Suporte](#suporte)
@@ -52,12 +57,13 @@
 
 <table><tr><td>
 
-> **[?]**
-> Provide general information about your project here.
-> What problem does it (intend to) solve?
-> What is the purpose of your project?
-> Why did you undertake it?
-> You don't have to answer all the questions -- just the ones relevant to your project.
+> Informações gerais: Um aplicativo de delivery prático que entrega onde você estiver.
+>
+> Problema que resolve: Dificuldade em encontrar entregas rápidas e personalizadas em um só aplicativo.
+>
+> Propósito: Tornar o acesso a produtos e serviços mais ágil e conveniente.
+>
+> Motivo da criação: Facilitar a vida das pessoas que buscam praticidade nas entregas no dia a dia.
 
 <details>
 <summary>Screenshots</summary>
@@ -76,22 +82,46 @@
 
 ### Feito Com
 
-> **[?]**
-> Please provide the technologies that are used in the project.
+<p align="center">
+  <a href="#-shields-">
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TS">  
+    <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="Node"> 
+    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
+    <img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge" alt="React">
+    <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  </a>
+  </p>
 
 ## Começando
 
-### Prerequisitos
+### Pré-requisitos
 
-> **[?]**
-> What are the project requirements/dependencies?
+ *Dependências Backend*:
+-  `Express 5 (Servidor)` 
+- `MySQL 2 (Banco de dados)` 
+- `Bcryptjs (Hash de senhas)` 
+- `CORS (Segurança de requisições)`
+- `Dotenv (Variáveis de ambiente)`
+
+<br>
+
+ *Dependências Frontend*: 
+
+- `React 19 + React Router v7 + TypeScript (Core)`
+- `Tailwind CSS 4 (Estilos)`
+- `Radix UI + Utilitários shadcn/ui + Ícones - Lucide React (UI Components)`
+- `React Hook Form + Zod + @hookform/resolvers (Formulários)`
+- `Framer Motion (animações) + Recharts (gráficos) + date-fns (datas) + Embla Carousel + Sonner (notificações)`
+- `Vite 7 + ESLint 9 (Build Tools)`
 
 ### Instalação
 
-<!-- --- EXEMPLO - EDITAR --- -->
 
 > **[?]**
-> 1. **Install Dependencies**: `npm install or yarn`
+> 1. **Install Dependencies**: `cd backend && npm install && cd .. && cd frontend && npm install` 
+
+<!-- -- EDITAR -- -->
+
 >2. **Create containers**: `docker-compose up -d`
 >3. **Environment variables**: Copy `.env.example` to a new `.env.local`
 >4. **Database Setup**: `npx prisma migrate dev --name init`
@@ -165,30 +195,11 @@ Modelo base Remy Sharp:
 
 <!-- AJUDAR O ABAIXO COM O CODIGO MARKDOWN ACIMA -->
 
-<!--<h1 align="center">
-  <a href="#"><img src="README/Segunda Logo do Projeto.png" alt="Logo Foodly" width="200"></a>
-  <br>
-  Foodly
-  <br>
-</h1>
 
-<h4 align="center">O App de Delivery que leva o que você deseja onde estiver, com apenas um toque.</h4>
 
-<p align="center">
-  <a href="#-colaboradores-">
-    <img src="https://img.shields.io/badge/👫_7_-Colaboradores-green" alt="Colaboradores">
-    </a>
-  </p>
 
-<p align="center">
-  <a href="#-shields-">
-    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TS">  
-    <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="Node"> 
-    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
-    <img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge" alt="React">
-    <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-  </a>
-  </p>
+
+
   
 
 <!--
