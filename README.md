@@ -1,11 +1,11 @@
-<h1 align="center">
+<h1 align="center" >
   <a href="https://github.com/pedrosdutra/softwaredelivery">
     <img src="docs/images/logo.png" alt="Logo Foodly" width="100" height="100">
   </a>
 </h1>
 
 <div align="center">
-  Foodly
+  <h2 style="border-bottom: none; margin: 0; padding: 0;"> Foodly </h2>
   <br />
   <a href="#about"><strong>Screenshots</strong></a>
   <br />
@@ -32,28 +32,46 @@
 
 </div>
 
+<hr />
+<br />
+
 <details open="open">
 <summary>Sumário</summary>
 
+- [Feito Com](#feito-com)
 - [Sobre](#sobre)
-  - [Feito Com](#feito-com)
 - [Começando](#começando)
   - [Pré-requisitos](#prerequisitos)
   - [Instalação](#instalação)
 - [Como usar](#como-usar)
-- [Suporte](#suporte)
 - [Como Ajudar o Projeto](#como-ajudar-o-projeto)
-- [Como Contribuir](#como-contribuir)
+  - [Como Contribuir](#como-contribuir)
 - [Autores do Projeto](#autores-do-projeto)
-- [Segurança](#segurança)
+- [Suporte](#suporte)
+  - [Segurança](#segurança)
 - [Licença](#licença)
-- [Conquistas](#conquistas)
 
 </details>
 
----
+
+## Feito Com
+
+<br/>
+
+<p align="center">
+  <a href="#-shields-">
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TS">  &hairsp;
+    <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="Node"> &hairsp;
+    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind"> &hairsp;
+    <img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge" alt="React"> &hairsp;
+    <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"> &hairsp;
+  </a>
+  </p>
+
 
 ## Sobre
+
+<details>
 
 <table><tr><td>
 
@@ -80,19 +98,11 @@
 
 </td></tr></table>
 
-### Feito Com
-
-<p align="center">
-  <a href="#-shields-">
-    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TS">  
-    <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white" alt="Node"> 
-    <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
-    <img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge" alt="React">
-    <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-  </a>
-  </p>
+</details>
 
 ## Começando
+
+<details>
 
 ### Pré-requisitos
 
@@ -113,6 +123,8 @@
 - `React Hook Form + Zod + @hookform/resolvers (Formulários)`
 - `Framer Motion (animações) + Recharts (gráficos) + date-fns (datas) + Embla Carousel + Sonner (notificações)`
 - `Vite 7 + ESLint 9 (Build Tools)`
+
+</details>
 
 ### Instalação
 
@@ -187,11 +199,6 @@ See [LICENSE](LICENSE) for more information.
 Modelo base Remy Sharp:
 - [MIT](https://rem.mit-license.org)
 
-## Conquistas
-
-> **[?]**
-> If your work was funded by any organization or institution, acknowledge their support here.
-> In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.
 
 <!-- AJUDAR O ABAIXO COM O CODIGO MARKDOWN ACIMA -->
 
