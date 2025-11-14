@@ -1,21 +1,20 @@
-<h1 align="center" >
+<p align="center" >
   <a href="https://github.com/pedrosdutra/softwaredelivery">
     <img src="docs/images/logo.png" alt="Logo Foodly" width="100" height="100">
   </a>
-</h1>
+</p>
 
 <div align="center">
-  <h2 style="border-bottom: none; margin: 0; padding: 0;"> Foodly </h2>
-  <br />
-  <a href="#Screenshots"><strong>Screenshots</strong></a>
-  <br />
+  <h1> Foodly </h1>
+  <p>
   <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Reportar Bugs</a>
   ·
   <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Pedir novas Features</a>
   ·
   <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+">Perguntar</a>
+  </p>
 </div>
-<br/ >
+
 
 <p align="center">
   <a href="#-colaboradores-">
@@ -33,23 +32,20 @@
 </div>
 
 <hr />
-<br />
+<br>
 
 <details open="open">
 <summary>Sumário</summary>
 
 - [Feito com](#✏️-feito-com)
 - [Sobre](#ℹ️-sobre)
-  - [Cargos](#💼-cargos)
+  - Cargos
+  - Screenshots
 - [Começando](#↪️-começando)
-  - [Pré-requisitos](#🗒️-pré-requisitos)
+  - Pré-requisitos
 - [Instalação Local](#🖥️-instalação-local)
 - [Como usar](#❓️-como-usar)
-- [Requisitos para a Entrega Final](❗️-requisitos-para-a-entrega-final)
-  - [Pair Programming](💻-pair-programming)
-  - [Bug Tracking](🐞-bug-tracking)
-  - [Diagrama de Atividades](🗺️-diagrama-de-atividades)
-  - [Vídeo explicando as Pastas](📽️-vídeo-explicando-as-pastas)
+- [Requisitos para a Entrega Final](#❗️-requisitos-para-a-entrega-final)
 - [Como Contribuir](#🧑‍💻-como-contribuir)
 - [Segurança](🔒️-segurança)
 - [Licença](#🪪-Licença)
@@ -95,7 +91,7 @@
 
 |                              Tela Home                               |                              Tela Login                              |
 | :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="README/telaprincipal.png" title="Tela Home" width="100%"> | <img src="README/userlogin.png" title="Tela Login Page" width="100%"> |
+| <img src="README/telaprincipal.png" title="Tela Home" width="80%"> | <img src="README/userlogin.png" title="Tela Login Page" width="80%"> |
 
 <!--- --- COLOCAR MAIS SCREENSHOTS AQUI DO QUE FOI FEITO ! --- --->
 
@@ -132,14 +128,25 @@
 </details>
 
 ## 🖥️ Instalação local
+``` bash
+// Instalar Dependências:
 
-> **Instalar Dependências**: `cd backend && npm install && cd .. && cd frontend && npm install` 
+cd backend && npm install && cd .. && cd frontend && npm install
+```
 
 ## ❓️ Como usar
 
-> **Rodar Backend**: `cd backend && node src/server.js` <br>
-> **Rodar Frontend**: `cd frontend && npm run dev`
+``` bash
+// Rodar Backend: 
 
+cd backend && node src/server.js
+```
+
+``` bash
+// Rodar Frontend:
+
+cd frontend && npm run dev
+```
 ## ❗️ Requisitos para a Entrega Final
 
 <!--- --- OBS: Esses são os Requisitos da Entrega 3, falta os da Entrega 4 --- --->
@@ -189,7 +196,7 @@ Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*,
 > [Readme 2](README/README_2.md)
 
 
-## 🧑‍💻 Como Contribuir
+## 👥 Como Contribuir
 
 Obrigado pelo interesse em contribuir com nosso projeto! Todos são bem-vindos para colocar suas ideias aqui.
 
