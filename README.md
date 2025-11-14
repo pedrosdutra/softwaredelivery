@@ -136,6 +136,8 @@ cd backend && npm install && cd .. && cd frontend && npm install
 
 ## ❓️ Como usar
 
+>  Abra dois terminais e rode os comandos abaixo em cada um:
+
 ``` bash
 // Rodar Backend: 
 
