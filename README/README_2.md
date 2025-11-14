@@ -6,14 +6,17 @@
 
 ### 📌 Usamos o Jira:
 
+<details>
 <img src="board.png">
 <img src="backlog.png">
+</details>
 
 ## 🖥️ Telas para o projeto
 
 > [**Link do Figma**](https://www.figma.com/files/team/1550588552907812239/project/454881178/Projeto-de-equipe?fuid=1550588548872029139)
 > [**Link do Vídeo**](https://drive.google.com/file/d/1DPRSJO9x1ZPqJQnVmqhCyk8qL_WOP9eo/view?usp=sharing)
 
+<details>
 1. Telas de login/cadastro/cadastro restaurante
 
 <img src="usercadastro.png">
@@ -71,10 +74,37 @@ Extra 1. Seu Par de Comida
 Extra 2. Comida aleatória
 
 <img src="telarandom.png">
+</details>
+
+## 🗓️ Recursos - Sprints
+
+1. Cadastro de cliente/Entregador/Restaurante  
+
+2. Cardápio Digital/Perfil Restaurante 
+
+3. Carrinho de compra  
+
+4. Usuário Premium 
+
+5. Painel para o restaurante (Status do pedido)  
+
+6. Painel entregador 
+
+7. Calcular de rota  
+
+8. Avaliação Restaurante/Entregador 
+
+9. Chat suporte  
+
+10. Notificação Promocional 
+
+11. Recurso para fazer seu "Par de Comida"
+
+12. Recurso para recomendar um restaurante/comida aleatória com melhor avaliação
 
 ## 🐞 Bug Tracking Fotos
 
-<!--
+<details>
 <img src="Bug Tracker 7.png">
 <img src="Bug Tracker 6.png">
 <img src="Bug Tracker 5.png">
@@ -82,7 +112,7 @@ Extra 2. Comida aleatória
 <img src="Bug Tracker 3.png">
 <img src="Bug Tracker 2.png">
 <img src="Bug Tracker 1.png">
--->
+</details>
 
 ## Fluxo BPMN
 
@@ -90,6 +120,7 @@ Extra 2. Comida aleatória
 
 ## Diagramas 
 
+<details>
 - Diagrama H1: <br>
 <img src="diagrama_1.jpeg">
 - Diagrama H2: <br>
@@ -114,3 +145,4 @@ Extra 2. Comida aleatória
 <img src="diagrama_11.jpeg">
 - Diagrama HEX2: <br>
 <img src="diagrama_12.jpeg">
+</details>

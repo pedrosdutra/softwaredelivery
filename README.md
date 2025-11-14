@@ -7,7 +7,7 @@
 <div align="center">
   <h2 style="border-bottom: none; margin: 0; padding: 0;"> Foodly </h2>
   <br />
-  <a href="#about"><strong>Screenshots</strong></a>
+  <a href="#Screenshots"><strong>Screenshots</strong></a>
   <br />
   <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Reportar Bugs</a>
   ·
@@ -38,25 +38,25 @@
 <details open="open">
 <summary>Sumário</summary>
 
-- [Feito Com](#feito-com)
-- [Sobre](#sobre)
-- [Começando](#começando)
-  - [Pré-requisitos](#prerequisitos)
-  - [Instalação](#instalação)
-- [Como usar](#como-usar)
-- [Como Ajudar o Projeto](#como-ajudar-o-projeto)
-  - [Como Contribuir](#como-contribuir)
-- [Autores do Projeto](#autores-do-projeto)
-- [Suporte](#suporte)
-  - [Segurança](#segurança)
-- [Licença](#licença)
+- [Feito com](#✏️-feito-com)
+- [Sobre](#ℹ️-sobre)
+  - [Cargos](#💼-cargos)
+- [Começando](#↪️-começando)
+  - [Pré-requisitos](#🗒️-pré-requisitos)
+- [Instalação Local](#🖥️-instalação-local)
+- [Como usar](#❓️-como-usar)
+- [Requisitos para a Entrega Final](❗️-requisitos-para-a-entrega-final)
+  - [Pair Programming](💻-pair-programming)
+  - [Bug Tracking](🐞-bug-tracking)
+  - [Diagrama de Atividades](🗺️-diagrama-de-atividades)
+  - [Vídeo explicando as Pastas](📽️-vídeo-explicando-as-pastas)
+- [Como Contribuir](#🧑‍💻-como-contribuir)
+- [Segurança](🔒️-segurança)
+- [Licença](#🪪-Licença)
 
 </details>
 
-
-## Feito Com
-
-<br/>
+## ✏️ Feito com
 
 <p align="center">
   <a href="#-shields-">
@@ -68,8 +68,7 @@
   </a>
   </p>
 
-
-## Sobre
+## ℹ️ Sobre
 
 <details>
 
@@ -83,16 +82,22 @@
 >
 > Motivo da criação: Facilitar a vida das pessoas que buscam praticidade nas entregas no dia a dia.
 
+#### 💼 Cargos:
+- Devs Back-end: `Breno / Ivo / Diogo`
+- Devs Front-end: `Salomão`
+- Devs Fullstack: `Pedro / Nedson / Alvin / Salomão`
+- Design: `Pedro / Salomão`
+- Documentação: `Salomão`
+
+#### Screenshots
+
 <details>
-<summary>Screenshots</summary>
-<br>
 
-> **[?]**
-> Please provide your screenshots here.
-
-|                               Home Page                               |                               Login Page                               |
+|                              Tela Home                               |                              Tela Login                              |
 | :-------------------------------------------------------------------: | :--------------------------------------------------------------------: |
-| <img src="docs/images/screenshot.png" title="Home Page" width="100%"> | <img src="docs/images/screenshot.png" title="Login Page" width="100%"> |
+| <img src="README/telaprincipal.png" title="Tela Home" width="100%"> | <img src="README/userlogin.png" title="Tela Login Page" width="100%"> |
+
+<!--- --- COLOCAR MAIS SCREENSHOTS AQUI DO QUE FOI FEITO ! --- --->
 
 </details>
 
@@ -100,14 +105,14 @@
 
 </details>
 
-## Começando
+## ↪️ Começando
 
 <details>
 
-### Pré-requisitos
+### 🗒️ Pré-requisitos
 
  *Dependências Backend*:
--  `Express 5 (Servidor)` 
+- `Express 5 (Servidor)` 
 - `MySQL 2 (Banco de dados)` 
 - `Bcryptjs (Hash de senhas)` 
 - `CORS (Segurança de requisições)`
@@ -126,145 +131,22 @@
 
 </details>
 
-### Instalação
+## 🖥️ Instalação local
 
+> **Instalar Dependências**: `cd backend && npm install && cd .. && cd frontend && npm install` 
 
-> **[?]**
-> 1. **Install Dependencies**: `cd backend && npm install && cd .. && cd frontend && npm install` 
+## ❓️ Como usar
 
-<!-- -- EDITAR -- -->
+> **Rodar Backend**: `cd backend && node src/server.js` <br>
+> **Rodar Frontend**: `cd frontend && npm run dev`
 
->2. **Create containers**: `docker-compose up -d`
->3. **Environment variables**: Copy `.env.example` to a new `.env.local`
->4. **Database Setup**: `npx prisma migrate dev --name init`
->5. **Start Developing**: `npm run start:dev (api) & npm run dev (frontend)`
+## ❗️ Requisitos para a Entrega Final
 
-## Como usar
-
-> **[?]**
-> How does one go about using it?
-> Provide various use cases and code examples here.
-
-## Suporte
-
-> **[?]**
-> Provide additional ways to contact the project maintainer/maintainers.
-
-Reach out to the maintainer at one of the following places:
-
-- [GitHub issues](https://github.com/sal0minh0/softwaredelivery/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+)
-- Contact options listed on [this GitHub profile](https://github.com/sal0minh0)
-
-## Como Ajudar o Projeto
-
-If you want to say **thank you** or/and support active development of Foodly:
-
-- Add a [GitHub Star](https://github.com/sal0minh0/softwaredelivery) to the project.
-- Tweet about the Foodly.
-- Write interesting articles about the project on [Dev.to](https://dev.to/), [Medium](https://medium.com/) or your personal blog.
-
-Together, we can make Foodly **better**!
-
-## Como Contribuir
-
-First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
-
-
-Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you for being involved!
-
-<!-- --- EXEMPLO - EDITAR --- -->
-
-1. **Clone project**: `git clone https://github.com/Fernanda-Kipper/Readme-Templates.git`
-2. **Create feature/branch**: `git checkout -b feature/NAME`
-
-## Autores do Projeto
-
-The original setup of this repository is by [Salomão de Moraes](https://github.com/sal0minh0).
-
-For a full list of all authors and contributors, see [the contributors page](https://github.com/sal0minh0/softwaredelivery/contributors).
-
-## Segurança
-
-Foodly follows good practices of security, but 100% security cannot be assured.
-Foodly is provided **"as is"** without any **warranty**. Use at your own risk.
-
-_For more information and to report security issues, please refer to our [security documentation](docs/SECURITY.md)._
-
-## Licença
-
-This project is licensed under the **MIT license**.
-
-See [LICENSE](LICENSE) for more information.
-
-Modelo base Remy Sharp:
-- [MIT](https://rem.mit-license.org)
-
-
-<!-- AJUDAR O ABAIXO COM O CODIGO MARKDOWN ACIMA -->
-
-
-
-
-
-
-  
-
-<!--
-![screenshot](#)
--->
-
-<!--
-## 💼 Cargos:
-- Devs Back-end: `Breno / Ivo / Diogo`
-- Devs Front-end: `Salomão`
-- Devs Fullstack: `Pedro / Nedson / Alvin / Salomão`
-- Design: `Pedro / Salomão`
-- Documentação: `Salomão`
-
-## 🔍️ Sumário:
-
-[Evidencias de Pair Programming](#-pair-programming) <br><br>
-[Bug Tracking Atualizado](#-bug-tracking-github-issues) <br><br>
-[Diagrama de Atividades Atualizado](#diagrama-de-atividades-atualizado) <br><br>
-[Vídeo explicando as Pastas](#vídeo-explicando-as-pastas) <br>-->
-
-
-<!--## Como instalar?
-    > mysql e node e npm...
-    
-    ## Versão 1.0
-    > colocar sobre...
--->
-
-<!--
-## 🗓️ Recursos - Sprints
-
-1. Cadastro de cliente/Entregador/Restaurante  
-
-2. Cardápio Digital/Perfil Restaurante 
-
-3. Carrinho de compra  
-
-4. Usuário Premium 
-
-5. Painel para o restaurante (Status do pedido)  
-
-6. Painel entregador 
-
-7. Calcular de rota  
-
-8. Avaliação Restaurante/Entregador 
-
-9. Chat suporte  
-
-10. Notificação Promocional 
-
-11. Recurso para fazer seu "Par de Comida"
-
-12. Recurso para recomendar um restaurante/comida aleatória com melhor avaliação
+<!--- --- OBS: Esses são os Requisitos da Entrega 3, falta os da Entrega 4 --- --->
 
 ### 💻 Pair Programming
 
+<details>
 Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*, alternando os papéis de **Driver** (quem codifica) e **Navigator** (quem orienta e revisa). Essa prática ajudou a melhorar a qualidade do código, promover o aprendizado conjunto e facilitar a resolução de problemas.
 
 | Data | Funcionalidade | Driver | Navigator | Duração |
@@ -278,95 +160,53 @@ Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*,
 > - **Frontend:** estruturação das telas principais, integração com a API e ajustes visuais responsivos.  
 > - **Bug Tracker:** correção e registro de erros, aprimoramento do fluxo de feedback e melhorias na rastreabilidade de falhas.
 
-## 🐞 Bug Tracking (GitHub Issues)
-[Link Bug Tracker](https://github.com/pedrosdutra/softwaredelivery/issues)
+</details>
 
-## Diagrama de Atividades Atualizado
+<!-- -- Entrega 3 -- -->
 
-[Link para o Diagrama](https://1drv.ms/f/c/b1599c0a0d00128c/EoB-_Crxb79DuTUHmsImx2IBdn8dWgVuMBFy8HQ7jwHrGA?e=NbbD9a)
-<!--
+### 🐞 Bug Tracking
+[GitHub Issues](https://github.com/pedrosdutra/softwaredelivery/issues)
+
+<!-- -- Entrega 3 -- -->
+
+### 🗺️ Diagrama de Atividades
+
+<details>
 <img src="README/Diagrama-Foodly1.jpeg">
 <img src="README/Diagrama-Foodly2.jpeg">
 <img src="README/Diagrama-Foodly3.jpeg">
--->
+</details>
 
-<!--
+<!-- -- Entrega 3 -- -->
 
-## Vídeo explicando as Pastas
-[Video](https://drive.google.com/file/d/1dry2-Un5sebZLeBVe6CXrkJKNOi1ieNt/view)
+### 📽️ Vídeo explicando as Pastas
+> [Link do Vídeo](https://drive.google.com/file/d/1dry2-Un5sebZLeBVe6CXrkJKNOi1ieNt/view)
 
-## Outros links
-<!-- Para deixar o Readme mais clean -->
+<!-- -- Entrega 3 -- -->
 
-<!--
-[Readme 2](/assets%20do%20README/README_2.md)
+### 📒 Readme com entregas Passadas
 
-<!-- DEPOIS INCLUIR: --
-## Como usar?
-
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
-
-# Go into the repository
-$ cd electron-markdownify
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
-
-> **Note**
-> If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+> [Readme 2](README/README_2.md)
 
 
-## Download
+## 🧑‍💻 Como Contribuir
 
-You can [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) the latest installable version of Markdownify for Windows, macOS and Linux.
+Obrigado pelo interesse em contribuir com nosso projeto! Todos são bem-vindos para colocar suas ideias aqui.
 
-## Emailware
+Por favor leia [nosso guia de contribuição](docs/CONTRIBUTING.md) para mais esclarecimentos!
 
-Markdownify is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
+1. **Clonar projeto**: `git clone https://github.com/pedrosdutra/softwaredelivery.git`
+2. **Crie sua branch/feature**: `git checkout -b feature/NAME`
 
-## Creditos
+## 🔒️ Segurança
 
-This software uses the following open source packages:
+Foodly segue boas práticas de seguranças, mas um software 100% seguro é impossível. Este software é fornecido assim **"como está"** e sem **nenhuma garantia**, então use por seu próprio risco.
 
-- [Electron](http://electron.atom.io/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-- [showdown](http://showdownjs.github.io/showdown/)
-- [CodeMirror](http://codemirror.net/)
-- Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
-- [highlight.js](https://highlightjs.org/)
+*Para mais informações, leia nossa [documentação de segurança](docs/SECURITY.md)*.
 
-## Related
 
-[Try Web version of Markdownify](https://notepad.js.org/markdown-editor/)
+## 🪪 Licença
 
-## Support
+Esse projeto usa a **licença MIT**.
 
-If you like this project and think it has helped in any way, consider buying me a coffee!
-
-<a href="https://buymeacoffee.com/amitmerchant" target="_blank"><img src="app/img/bmc-button.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-## You may also like...
-
-- [Pomolectron](https://github.com/amitmerchant1990/pomolectron) - A pomodoro app
-- [Correo](https://github.com/amitmerchant1990/correo) - A menubar/taskbar Gmail App for Windows and macOS
-
-## Licença
-
-MIT
-
----
-
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
--->
-
+Veja o arquivo [LICENCE](LICENCE) para mais informações.
