@@ -31,7 +31,7 @@
 
 </div>
 
-<hr />
+
 <br>
 
 <details open="open">
