@@ -163,6 +163,7 @@ Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*,
 | 12/10/2025 | Implementação do banco de dados | Diogo | Breno | 2h |
 | 21/09/2025 | Desenvolvimento do frontend | Pedro | Ivo | 4h |
 | 21/09/2025 | Implementação do módulo de bug tracker | Salomão | Nedson | 1h30 |
+| 23/11/2025 | Seguimento na refatoração do projeto para JAVA | Álvaro | Nedson | 2h |
 
 > 💬 As sessões abrangeram diferentes etapas do projeto.  
 > - **Banco de dados:** criação das tabelas principais, definição dos relacionamentos e configuração da conexão com o backend.  
