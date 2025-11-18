@@ -215,3 +215,9 @@ Foodly segue boas práticas de seguranças, mas um software 100% seguro é impos
 Esse projeto usa a **licença MIT**.
 
 Veja o arquivo [LICENCE](LICENCE) para mais informações.
+
+
+## 🧑‍💻 Codigo Refatorado 
+
+https://github.com/Alvarojcb/Foodly-projeto-feito
+
