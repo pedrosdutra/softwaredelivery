@@ -146,3 +146,22 @@ Extra 2. Comida aleatória
 - Diagrama HEX2: <br>
 <img src="diagrama_12.jpeg">
 </details>
+
+### 💻 Pair Programming - Entrega 03
+
+<details>
+Durante o desenvolvimento do projeto, realizamos sessões de *Pair Programming*, alternando os papéis de **Driver** (quem codifica) e **Navigator** (quem orienta e revisa). Essa prática ajudou a melhorar a qualidade do código, promover o aprendizado conjunto e facilitar a resolução de problemas.
+
+| Data | Funcionalidade | Driver | Navigator | Duração |
+|------|----------------|---------|------------|----------|
+| 12/10/2025 | Implementação do banco de dados | Diogo | Breno | 2h |
+| 21/09/2025 | Desenvolvimento do frontend | Pedro | Ivo | 4h |
+| 21/09/2025 | Implementação do módulo de bug tracker | Salomão | Nedson | 1h30 |
+| 23/11/2025 | Seguimento na refatoração do projeto para JAVA | Álvaro | Nedson | 2h |
+
+> 💬 Tiveram sessões em diferentes etapas do projeto
+
+> - **Banco de dados:** criação das tabelas principais, definição dos relacionamentos e configuração da conexão com o backend.  
+> - **Frontend:** estruturação das telas principais, integração com a API e ajustes visuais responsivos.  
+> - **Bug Tracker:** correção e registro de erros, aprimoramento do fluxo de feedback e melhorias na rastreabilidade de falhas.
+</details>
