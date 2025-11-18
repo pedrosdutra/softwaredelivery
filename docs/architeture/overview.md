@@ -1,6 +1,6 @@
 # Arquitetura Geral do Sistema
 
-_O Foodly é dividido em duas camadas principais:_
+_O App é dividido em duas camadas principais:_
 
 - Backend: API REST em Node.js/Express conectada ao MySQL
 - Frontend: SPA React (Vite) com múltiplas aplicações modulares
