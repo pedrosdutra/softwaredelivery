@@ -1,7 +1,5 @@
 # Documentação do Banco de Dados
 
-Projetado para gerenciar usuários, restaurantes e suas respectivas informações.
-
 **Nome do Banco:** `foodlydb`  
 **SGBD:** MySQL  
 
