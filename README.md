@@ -31,9 +31,8 @@
 
 </div>
 
+> ⚠️ Aviso:
 [Este Projeto está passando por uma Refatoração](https://github.com/Alvarojcb/Foodly-projeto-feito)
-
-<br>
 
 <details open="open">
 <summary>Sumário</summary>
