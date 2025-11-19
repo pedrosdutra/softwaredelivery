@@ -4,6 +4,11 @@
   </a>
 </p>
 
+<h2 align="center" > 
+  Foodly
+</h2>
+
+<!-- 
 <div align="center">
   <h1> Foodly </h1>
   <p>
@@ -14,6 +19,7 @@
   <a href="https://github.com/pedrosdutra/softwaredelivery/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+">Perguntar</a>
   </p>
 </div>
+-->
 
 
 <p align="center">
@@ -31,9 +37,86 @@
 
 </div>
 
-> ⚠️ Aviso:
-[Este Projeto está passando por uma Refatoração](https://github.com/Alvarojcb/Foodly-projeto-feito)
+> [!NOTE]
+> ⚠️ Este código não será mais mantido. Verfique este repositório abaixo:
 
+## 🧑‍💻 Codigo Refatorado 
+
+https://github.com/Alvarojcb/Foodly-projeto-feito
+
+
+## 🔧  Lo-Fi  (Refatoração Geral do Código)
+
+### Nesta etapa, todo o código do projeto foi revisado e reorganizado para melhorar:
+
+- Estrutura e organização dos arquivos
+
+- Clareza e legibilidade do código
+
+- Redução de duplicações
+
+- Padronização de nomes
+
+- Melhor fluxo de navegação/funcionalidade
+
+- Correção de bugs encontrados durante a refatoração
+
+## 🧩 Novas Histórias de Usuário Implementadas
+
+### Foram adicionadas as seguintes funcionalidades baseadas nas novas histórias:
+
+- Promoção
+- Suporte
+- Assinante Premium 
+- Cadastro Usuário 
+- Cadastro Restaurante 
+- Login
+
+
+## 📦 Alterações Realizadas
+
+- Reescrita de componentes antigos
+
+- Atualização do layout
+
+- Criação de novas telas
+
+- Ajustes no backend (Api) 
+
+- Melhoria na responsividade
+
+- Ajuste de rotas
+
+- Documentação atualizada
+
+
+## 🔄 Antes e Depois da Refatoração
+
+### `ANTES`
+
+- Código fragmentado
+
+- Estrutura desorganizada
+
+- Layout desatualizado
+
+- Fluxo com problemas
+
+### `DEPOIS`
+
+- Código mais limpo
+
+- Pastas organizadas
+
+- Novo layout implementado
+
+- Fluxo corrigido e mais intuitivo
+
+- Histórias novas integradas
+
+<!--- --- Escondendo o Readme explicando da versão anterior do Projeto --- --->
+
+<details>
 <details open="open">
 <summary>Sumário</summary>
 
@@ -149,6 +232,8 @@ cd backend && node src/server.js
 
 cd frontend && npm run dev
 ```
+</details>
+
 ## ❗️ Requisitos para a Entrega Final
 
 <!--- --- OBS: Esses são os Requisitos da Entrega 3, falta os da Entrega 4 --- --->
@@ -215,79 +300,3 @@ Foodly segue boas práticas de seguranças, mas um software 100% seguro é impos
 Esse projeto usa a **licença MIT**.
 
 Veja o arquivo [LICENCE](LICENCE) para mais informações.
-
-
-## 🧑‍💻 Codigo Refatorado 
-
-https://github.com/Alvarojcb/Foodly-projeto-feito
-
-
-## 🔧  Lo-Fi  (Refatoração Geral do Código)
-
-Nesta etapa, todo o código do projeto foi revisado e reorganizado para melhorar:
-
-Estrutura e organização dos arquivos
-
-Clareza e legibilidade do código
-
-Redução de duplicações
-
-Padronização de nomes
-
-Melhor fluxo de navegação/funcionalidade
-
-Correção de bugs encontrados durante a refatoração
-
- # 🧩 Novas Histórias de Usuário Implementadas
-
-Foram adicionadas as seguintes funcionalidades baseadas nas novas histórias:
-
-- Promoção
-- Suporte
-- Assinante Premium 
-- Cadastro Usuário 
-- Cadastro Restaurante 
-- Login
-
-
-# 📦 Alterações Realizadas
-
-Reescrita de componentes antigos
-
-Atualização do layout
-
-Criação de novas telas
-
-Ajustes no backend/api 
-
-Melhoria na responsividade
-
-Ajuste de rotas
-
-Documentação atualizada
-
-
-# 🔄 Antes e Depois da Refatoração
-
-ANTES
-
-Código fragmentado
-
-Estrutura desorganizada
-
-Layout desatualizado
-
-Fluxo com problemas
-
-
-DEPOIS
-
-Código mais limpo
-
-Pastas organizadas
-
-Novo layout implementado
-
-Fluxo corrigido e mais intuitivo
-
-Histórias novas integradas
