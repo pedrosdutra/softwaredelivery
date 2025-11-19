@@ -283,7 +283,7 @@ cd frontend && npm run dev
 
 Obrigado pelo interesse em contribuir com nosso projeto! Todos são bem-vindos para colocar suas ideias aqui.
 
-Por favor leia [nosso guia de contribuição](docs/CONTRIBUTING.md) para mais esclarecimentos!
+Por favor leia [nosso guia de contribuição](docs/contributing.md) para mais esclarecimentos!
 
 1. **Clonar projeto**: `git clone https://github.com/pedrosdutra/softwaredelivery.git`
 2. **Crie sua branch/feature**: `git checkout -b feature/NAME`
@@ -292,9 +292,12 @@ Por favor leia [nosso guia de contribuição](docs/CONTRIBUTING.md) para mais es
 
 Foodly segue boas práticas de seguranças, mas um software 100% seguro é impossível. Este software é fornecido assim **"como está"** e sem **nenhuma garantia**, então use por seu próprio risco.
 
+<!--- --- Excluindo, pois não há nessa versão essa documentação
+
 *Para mais informações, leia nossa [documentação de segurança](docs/SECURITY.md)*.
 
-
+--- --->
+ 
 ## 🪪 Licença
 
 Esse projeto usa a **licença MIT**.
