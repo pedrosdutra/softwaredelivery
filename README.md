@@ -215,3 +215,79 @@ Foodly segue boas práticas de seguranças, mas um software 100% seguro é impos
 Esse projeto usa a **licença MIT**.
 
 Veja o arquivo [LICENCE](LICENCE) para mais informações.
+
+
+## 🧑‍💻 Codigo Refatorado 
+
+https://github.com/Alvarojcb/Foodly-projeto-feito
+
+
+## 🔧  Lo-Fi  (Refatoração Geral do Código)
+
+Nesta etapa, todo o código do projeto foi revisado e reorganizado para melhorar:
+
+Estrutura e organização dos arquivos
+
+Clareza e legibilidade do código
+
+Redução de duplicações
+
+Padronização de nomes
+
+Melhor fluxo de navegação/funcionalidade
+
+Correção de bugs encontrados durante a refatoração
+
+ # 🧩 Novas Histórias de Usuário Implementadas
+
+Foram adicionadas as seguintes funcionalidades baseadas nas novas histórias:
+
+- Promoção
+- Suporte
+- Assinante Premium 
+- Cadastro Usuário 
+- Cadastro Restaurante 
+- Login
+
+
+# 📦 Alterações Realizadas
+
+Reescrita de componentes antigos
+
+Atualização do layout
+
+Criação de novas telas
+
+Ajustes no backend/api 
+
+Melhoria na responsividade
+
+Ajuste de rotas
+
+Documentação atualizada
+
+
+# 🔄 Antes e Depois da Refatoração
+
+ANTES
+
+Código fragmentado
+
+Estrutura desorganizada
+
+Layout desatualizado
+
+Fluxo com problemas
+
+
+DEPOIS
+
+Código mais limpo
+
+Pastas organizadas
+
+Novo layout implementado
+
+Fluxo corrigido e mais intuitivo
+
+Histórias novas integradas
