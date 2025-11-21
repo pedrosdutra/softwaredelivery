@@ -46,9 +46,9 @@ Usamos os padrões de commit :
 ### Documentação do Projeto
 
 - [Setup](https://github.com/Alvarojcb/Foodly-projeto-feito/blob/main/SETUP.md)
-- [Documentação da API](../docs/backend/V2_Java/api_v2.md)
-- [Guia de Arquitetura](../docs/architecture/V2_Java/overview_v2.md)
-- [Documentação do Frontend](../docs/frontend/V2_Java/components_v2.md)
+- [Documentação da API](https://github.com/pedrosdutra/softwaredelivery/blob/main/docs/backend/V2_Java/api_v2.md)
+- [Guia de Arquitetura](https://github.com/pedrosdutra/softwaredelivery/blob/main/docs/architecture/V2_Java/overview_v2.md)
+- [Documentação do Frontend](https://github.com/pedrosdutra/softwaredelivery/blob/main/docs/frontend/V2_Java/components_v2.md)
 
 ## Licença
 
